@@ -4,43 +4,70 @@
   <meta charset="utf-8">
   <title>김세랑</title>
   <style>
-   body {
+    body {
          font-family:"NanumGothic", "AppleGothic", "Malgun Gothic", Sans-serif;
          font-size: 1em;
          background-color: #ffffff;
          max-width: 930px;
          margin:0 auto;
          }
-   div.totalpage {padding: 30px;}
-   a {text-decoration: none;
-               color: black;}
-   div.thirdpage {
+         div.thirdpage {
                   background-color: #ffffff;
                   margin: 10px;
                   padding: 30px;
-                  border: 1px solid;
-                  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+                  border: 0px solid #ffffff;
                   height: 1000px;
    }
      ol {font-family: "Malgun Gothic" , serif;
          list-style-type: none;
          padding-left: 10px;
-         line-height: 1.7em;
-         word-spacing: 0.1em;
-         letter-spacing: -0.06em;
        }
-    h2 {text-align: right;
-            margin: 0px 0px 40px 0px;}
-    .nextpage {text-align: right;
-               margin:800px 0px 10px 0px;
+       .title {font-weight: bold;
+     }
+    .title3 {font-weight: bold;
+     }
+    .small {text-align: right;}
+        .nextpage {text-align: right;
+      position: absolute;
+      height: 100px;
+      width: 850px;
+               margin:100px 0px 0px 0px;
                padding:0px;
+
+    }
+    a {text-decoration: none;
+               color: black;}
+    h1 {
+      position: relative;
+      margin-left: 900px;
+    }
+    .a, .b {
+      position: absolute;
+      left: 0;
+      transition: color 1s;
+    }
+    .a {
+      color: rgba(0,0,0,1);
+    }
+    .b {
+      color: rgba(0,0,0,0);
+    }
+    
+    h1:hover .a {
+      color: rgba(0,0,0,0);
+    }
+    h1:hover .b {
+      color: rgba(0,0,0,1);
     }
   </style>
 </head>
 <body>
 <div class="totalpage">
  <div class="thirdpage">
-  <h2><a href="http://serangse.github.io/contentsK3.html">CONTENTS</a></h2>
+  <h1>
+  <span class="a">CONTENTS</span>
+  <a class="b" href="http://serangse.github.io/contentsK3.html">목차</a>
+</h1>
    <nav>
       <ol>
        <li>
