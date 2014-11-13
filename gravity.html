@@ -93,9 +93,14 @@ letter-spacing: 0.2em;
 text-transform: uppercase;}
 ul {padding-left: 0;}
 .real3d {
-width: 9%;}
+width: 9%;
+}
+.real3d_reverse {
+              display: none;}
 .imax {width: 9%;}
+.imax_reverse {display: none;}
 .distributor {width: 15%;}
+.distributor_reverse {display: none;}
 .quotes {
 color: gray;
 margin-bottom: 60px;
@@ -108,10 +113,53 @@ font-size: 120%;
 font-size: 120%;
 }
  @media print{
-  .pgreverse {float: left;
-width: 8%;}
+  body {padding: 10px;
+  }
+  .pg_reverse {float: left;
+              width: 10%;
+              display: inline-block;}
+  .pg {display: none;}
 
- }
+.real3d_reverse {width: 11%;
+              display: inline-block;}
+  .real3d {display: none;}
+  .imax {display: none;}
+.imax_reverse {width: 11%;
+               display: inline-block;}
+.distributor {display: none;}
+.distributor_reverse {width: 16%;
+                      display: inline-block;
+                      float: right;} 
+.contents, div.woman, div.man, .letgo, a, .storyline, .valuation, h1, .date, .btext { color: #000000;}
+h1 {font-size: 6em;
+    color: #000000;
+    margin: 4% 0 5% 0;}
+  .astronaut {
+margin: 14% 0 5% 0;
+}
+ .storyline {
+padding-bottom: 18px;
+font-size: 110%;
+margin:0 auto;
+width: 90%;
+}
+.valuation {
+  padding-top: 13px;
+font-weight: bold;}
+.namesize {font-size: 180%;}
+.ryan, .matt {font-size: 100%;}
+.quotes {margin-bottom: 18px;
+font-size: 98%;
+}
+.director {font-size: 150%;
+padding-top: 30px;}
+.role {font-size: 45%;}                 
+.name {font-size: 85%;}
+.astronautimg {width: 16%;}
+.site {font-size: 100%;
+padding-top: 15px;}
+.btext {font-size: 100%}
+}//*미디어쿼리프린트끝*//
 </style>
 </head>
 <body>
@@ -137,7 +185,7 @@ width: 8%;}
 </div>
 <p class="valuation">"A Bracing Masterpiece"</p>
 <div class="storyline">
-<p>Dr. Ryan Stone (Sandra Bullock) is a brilliant medical engineer on her first shuttle mission, <br>with veteran astronaut Matt Kowalsky (George Clooney) in command of his last flight before retiring. <br>But on a seemingly routine spacewalk, disaster strikes.<br> The shuttle is destroyed, leaving Stone and Kowalsky completely alone - <br>tethered to nothing but each other and spiraling out into the blackness.</p>
+<p>Dr. Ryan Stone (Sandra Bullock) is a brilliant medical engineer on her first shuttle mission, with veteran astronaut Matt Kowalsky (George Clooney) in command of his last flight before retiring. But on a seemingly routine spacewalk, disaster strikes. The shuttle is destroyed, leaving Stone and Kowalsky completely alone - tethered to nothing but each other and spiraling out into the blackness.
 </div>
 <div class="contents">
 <div class="director">
@@ -148,10 +196,9 @@ width: 8%;}
 <h3>스텝</h3>
 <ul>
 <li><span class="role">An</span><span class="name"> Esperanto filmo/Heyday Films</span></li>
-<li><span class="role"> Production An</span><span class="name"> Alfonso Cuarón Film</li>
+<li><span class="role"> Production An</span><span class="name"> Alfonso Cuarn Film</span></li>
 <li><span class="name"> Sandra Bullock George Clooney "Gravity"</span></li>
-<li><span class="role"> Music by</span></li>
-<li><span class="name"> Steven Price</span></li>
+<li><span class="role"> Music by</span><span class="name"> Steven Price</span></li>
 <li><span class="role">Costume designer</span><span class="name"> Jany Temime</span></li>
 <li><span class="role"> Visual effects supervisor</span><span class="name"> Tim Webber</span></li>
 <li><span class="role"> Editors</span><span class="name"> Alfonso Cuarón Mark Sanger</span></li>
@@ -166,24 +213,24 @@ width: 8%;}
 <footer>
 <img class="pg" alt="PG-13" src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B4%80%EB%9E%8C%EB%93%B1%EA%B8%89.PNG">
 <!--반전이미지-->
-<img class="pgreverse" alt="PG-13reverse" src="https://lh4.googleusercontent.com/Mkf6366QNSv51CIRzNqyCZOrjel1_ICRUJQq5nZpFSHWqLsubZ9V7qM5BSamjKq_8ED0T50cdfA=w1896-h851">
+<img class="pg_reverse" alt="PG-13_reverse" src="https://lh6.googleusercontent.com/-_O8zEMjQtyQ/VGS-vm9JjLI/AAAAAAAAANM/re4xmJssQqg/w426-h237/%EA%B4%80%EB%9E%8C%EB%93%B1%EA%B8%89%2Bcopy.png">
 <!--반전이미지-->
 <span class="site"><a href="http://gravitymovie.warnerbros.com/">gravity-movie.com</a></span>
 <span class="btext">See it in</span>
 <!--반전이미지-->
 <img class="real3d" alt="realD3D" src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/real%203d.PNG">
 <!--반전이미지-->
-<img class="real3dreverse" alt="realD3Dreverse" src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/real%203d.PNG">
+<img class="real3d_reverse" alt="realD3D_reverse" src="https://lh6.googleusercontent.com/-eCjE9NNVtsg/VGTAwsmuXEI/AAAAAAAAAOE/8KTvsa0Vo8E/w90-h30-no/real%2B3d%2Bcopy.png">
 <!--반전이미지-->
 <span class="btext">and</span>
 <!--반전이미지-->
 <img class="imax" alt="IMAX3D" src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/3d%20max.PNG">
 <!--반전이미지-->
-<img class="imaxreverse" alt="IMAX3Dreverse" src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/3d%20max.PNG">
+<img class="imax_reverse" alt="IMAX3D_reverse" src="https://lh6.googleusercontent.com/-ogK9PK2sFkM/VGTAw6MDo2I/AAAAAAAAAOI/UfBZLIkSJBc/w109-h17-no/3d%2Bmax%2Bcopy.png">
 <!--반전이미지-->
 <img class="distributor" alt="WB" src="https://googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/배급사.PNG">
 <!--반전이미지-->
-<img class="distributorreverse" alt="WBreverse" src="https://googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/배급사.PNG">
+<img class="distributor_reverse" alt="WB_reverse" src="https://lh6.googleusercontent.com/-MeptttaMLz0/VGTAw0g9GKI/AAAAAAAAAOM/nV1DhxUADKI/w223-h35-no/%EB%B0%B0%EA%B8%89%EC%82%AC%2Bcopy.png">
 <!--반전이미지-->
 <p class="date">10.4.13</p>
 </footer>
