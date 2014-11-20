@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>구글</title>
+ <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css'>
+  <style>
+   body {
+     font-family: 'Open Sans','Nanum Gothic', sans-serif;
+       margin: 0;}
+   header {
+          background-color: #da4336;
+    color: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 25px;
+    padding: 10px;
+  }
+    ul {list-style-type: none;}
+   header > h1 {
+   margin: 0;
+   display: inline;
+   font-weight: normal;
+     font-size:16px;
+   margin: 0 0 0 10px;
+   }
+   .search {
+   margin-left:30%;}
+   .menulist > li {
+     margin:0 1em;
+    display: inline-block;
+    float: right;
+       }
+    .menulist {
+     padding-left: 0;
+     margin: 0;
+     display: inline;
+           }
+  /*상단끝*/
+   .myproflie {
+               width: 23px;
+               height: 23px;
+               border: 1px soild;
+               border-radius: 15px;
+              }
+    .leftmenulist{
+     margin: 0;
+     padding: 30px 10px 30px 10px;
+      }
+    .leftmenulist > li {
+      margin: 1em 0;
+    }
+    .otherpeoplelist{
+       padding: 100px 10px 30px 10px;
+    }
+    
+   .otherprofile {width: 23px;
+               height: 23px;
+               border: 1px soild black;
+               border-radius: 15px;     
+   }
+  .num {
+      background-color: white;
+      display: inline-block;
+      padding: 3px 6px;
+      border-radius: 6px;
+      box-shadow: 1px 1px 2px #666;
+      font-size: 0.5em;
+  }
+  .leftmenubar { 
+    margin: 45px 0 0 0;
+    padding: 0;
+    max-width: 45px;
+    float: left;
+    position: fixed;
+    
+    }
+    /*중간*/
+    .chatting {
+        overflow: scroll;
+         overflow-x: hidden;
+    top: 45px;
+    max-width: 600px;
+    padding: 0;
+    margin: 0;}
+    .anotherprofile {width: 30px;
+               height: 30px;
+               padding: 0;
+               margin: 1px;    
+               border: 1px soild blue;
+               border-radius: 15px;     
+               float: left;
+               margin: 10px 15px;
+               display: inline-block;
+    }
+    p {margin: 0;}
+    .comment {font-size: 0.9em;
+    color: gray;
+    display: block;}
+    .bulebox {background-color: #4985e6;
+    margin: 10px 0 0 0;
+   }
+   .first {
+     max-width: 500px;
+     margin: 0;
+     padding: 50px 20px 10px 0;
+     border-bottom: 1px solid #d0d0d0;
+     float: left;
+    
+   }
+    .comment {font-size: 0.9em;
+    color: gray;
+    display: inline-block;}
+    .chat {
+     max-width: 500px;
+     margin: 0 0 0 50px;
+     padding: 10px 20px 10px 0;
+     border-bottom: 1px solid #d0d0d0;
+     border-left: 3px solid #d0d0d0;
+     display: block;
+   }
+    .bulebox 
+    {background-color: #4584e7;
+    margin: 0 0 0 300px;
+    padding:0 10px 0;
+    color: white;
+    float: right;
+    }
+   .greenbox 
+    {background-color: #15a764;
+    margin: 0 0 0 300px;
+    padding:0 10px 0;
+    color: white;
+    float: right;
+    }
+    
+    .yellowbox 
+    {background-color: #e9b22f;
+    margin: 0 0 0 300px;
+    padding:0 10px 0;
+    color: white;
+    float: right;
+    }
+    
+    .coloricon {width: 24px;
+               height: 24px;    
+               float: left;
+               margin: 10px 15px;
+    }
+    .bottom { 
+      background-color: #ffffff;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+      height: 50px;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .firstpage {float: left;}
+    .secondpage {float: right;}
+   </style>
+</head>
+<body>
+<header class="topbar">
+  <img class="menu"
+      src="http://google.github.io/material-design-icons/navigation/svg/ic_menu_24px.svg" alt="menu">
+  <h1>Primary</h1>
+  <img class="search"
+      src="http://google.github.io/material-design-icons/action/svg/ic_search_24px.svg" alt="search">
+  <ul class="menulist">
+  <li>
+   <img class="more_vert"
+      src="http://google.github.io/material-design-icons/navigation/svg/ic_more_vert_24px.svg
+" alt="more_vert">
+    </li>
+<li>
+   <img class="folder"
+      src="http://google.github.io/material-design-icons/file/svg/ic_folder_24px.svg" alt="folder">
+    </li>
+  <li>
+     <img class="email"
+      src="http://google.github.io/material-design-icons/communication/svg/ic_email_24px.svg
+" alt="email">
+    </li>
+<li>
+      <img class="delete"
+      src="http://google.github.io/material-design-icons/action/svg/ic_delete_24px.svg" alt="delete">
+    </li>
+<li>
+     <img class="archive"
+      src="http://google.github.io/material-design-icons/content/svg/ic_archive_24px.svg" alt="archive">
+    </li>
+</ul>
+  </header>
+<div class="leftmenubar">
+  <ul class="leftmenulist">
+  <li>
+   <img class="myproflie"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%83%88.jpg
+" alt="proflie">
+    </li>
+     <li>
+   <img class="inbox"
+      src="http://google.github.io/material-design-icons/content/svg/ic_inbox_24px.svg" alt="folder">
+    </li>
+  <li>
+     <img class="group"
+      src="http://google.github.io/material-design-icons/social/svg/ic_group_24px.svg
+
+" alt="email">
+    </li>
+    <li>
+      <img class="delete"
+      src="http://google.github.io/material-design-icons/maps/svg/ic_local_offer_24px.svg" alt="local_offer">
+    </li>
+    <li>
+     <img class="archive"
+      src="http://google.github.io/material-design-icons/action/svg/ic_info_24px.svg" alt="archive">
+    </li>
+</ul>
+  <ul class="otherpeoplelist">
+  <li>
+    <div class=profliepic>
+   <img class="otherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(1).jpg
+" alt="bambam"></div>
+<div class="num">15</div>
+    </li>
+      <li>
+        <div class="numpic">
+   <img class="otherprofile"
+src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(4).jpg
+" alt="Jr"></div>
+        <div class="num">10</div>
+    </li>
+</ul>
+  </div>
+  <div class="firstpage">
+  <ul class="chatting">
+  <li class="chat">
+     <img class="coloricon"
+      src="http://google.github.io/material-design-icons/social/svg/ic_group_24px.svg
+" alt="Social">
+      <span><strong>Social</strong></span>
+    <span class="bulebox">1 new</span>
+    <span class=comment>Google+</span>
+   </li>
+  <li class="chat">
+     <img class="coloricon"
+      src="http://google.github.io/material-design-icons/maps/svg/ic_local_offer_24px.svg
+
+" alt="local_offer">
+      <span><strong>promotion</strong></span>
+    <span class="greenbox">2 new</span>
+    <span class=comment>Zagat, Google Offers</span>
+   </li>
+  <li class="chat">
+     <img class="coloricon"
+      src="http://google.github.io/material-design-icons/action/svg/ic_info_24px.svg
+" alt="info">
+      <span><strong>Updates</strong></span>
+    <span class="yellowbox">1 new</span>
+    <span class=comment>Google play</span>
+   </li>
+  </ul>
+  </div>
+  <div class="secondpage">
+<h1>Board game night? <span class="skybluebox">Fun</span><span class="graybox">Inbox</span></h1>
+    </div>
+ <div class="bottom">
+   </div>
+
+</body>
+</html>
