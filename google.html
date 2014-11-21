@@ -77,14 +77,24 @@
     position: fixed;
     
     }
+    .penshape {
+               background-color: #da4336;
+               width: 40px;
+               height: 40px;
+               padding: 2px;
+               margin: 45% 0 0 500px;    
+               border: 1px soild blue;
+               border-radius: 21px;
+               position: fixed;
+    }
     /*중간*/
     .chatting {
-        overflow: scroll;
-         overflow-x: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
     top: 45px;
     max-width: 600px;
     padding: 0;
-    margin: 0;}
+    margin: 45px 0 65px 0;}
     .anotherprofile {width: 30px;
                height: 30px;
                padding: 0;
@@ -112,7 +122,7 @@
    }
     .comment {font-size: 0.9em;
     color: gray;
-    display: inline-block;}
+    }
     .chat {
      max-width: 500px;
      margin: 0 0 0 50px;
@@ -143,7 +153,25 @@
     color: white;
     float: right;
     }
-    
+    .redbox {background-color: #fb4b2e;
+    margin: 0 0 0 300px;
+    padding:0 10px 0;
+    color: white;
+    float: right;
+    font-size: 0.5em;}
+    .famailybox {background-color: #98d7e4;
+    margin: 0 0 0 300px;
+    padding:0 10px 0;
+    float: right;
+    font-size: 0.5em;}
+    .chat .skybluebox {background-color: #b6cff5;
+    margin: 0 0 0 300px;
+    padding:0 10px 0;
+    color: white;
+    float: right;
+    color: #314c85;
+    font-size: 0.5em;}
+
     .coloricon {width: 24px;
                height: 24px;    
                float: left;
@@ -157,10 +185,75 @@
     bottom: 0;
       height: 50px;
       padding: 10px;
-      box-sizing: border-box;
     }
     .firstpage {float: left;}
-    .secondpage {float: right;}
+    .secondpage {float: left;
+      max-width: 500px;
+      margin: 50px 0 0 0;}
+     .bored{
+     margin: 0 0 0 50px;
+     padding: 10px 20px 10px 0;
+     border-bottom: 1px solid #d0d0d0;
+     }
+    .secondpage h1 {font-size: 1em;
+      margin: 0 0 0 30px;
+    max-width: 700px;}
+    .skybluebox{background-color: #b6cff5;
+    margin: 0 10px 0 10px;
+    padding:0 10px 0;
+    color: #314c85;
+    float: right;
+    }
+    .graybox {background-color: #dbdbdb;
+    margin: 0 10px 0 10px;
+    padding:0 10px 0;
+    color: #868686;
+    float: right;
+    }
+    .bored{
+     margin: 0 0 0 50px;
+     padding: 10px 20px 10px 0;
+     border-bottom: 1px solid #d0d0d0;
+     }
+     .content {
+      max-width: 500px;
+     margin: 0 0 0 50px;
+     padding: 10px 20px 10px 0;
+     border-bottom: 1px solid #d0d0d0;
+     display: block;
+     }
+     .boredcon {
+    padding: 0;
+    margin: 0;}
+    .date 
+    {
+    margin: 0;
+    padding:0 10px 0;
+    color: gray;
+    float: right;
+    font-size: 0.5em;
+    }
+    a {text-decoration: none;
+    color: #4584e7;}
+    .boardlist > li {
+     margin:0 0.3em;
+    display: inline-block;
+    float: right;
+     padding-left: 0;
+     display: inline;
+           }
+    .text {color: gray;
+      margin:0 1em;}
+    .boardlist_sec > li {
+    margin:0 3em;
+    float: left;
+     padding-left: 0;
+     display: inline;
+     }
+     @media (max-width: 1024px) {
+      .secondpage {display: none;}
+     }
+
    </style>
 </head>
 <body>
@@ -238,6 +331,9 @@ src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-
     </li>
 </ul>
   </div>
+  <div class="pen"> <img class="penshape"
+      src="http://google.github.io/material-design-icons/editor/svg/ic_mode_edit_24px.svg
+" alt="Social"></div>
   <div class="firstpage">
   <ul class="chatting">
   <li class="chat">
@@ -264,11 +360,233 @@ src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-
       <span><strong>Updates</strong></span>
     <span class="yellowbox">1 new</span>
     <span class=comment>Google play</span>
+</li>
+    <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(5).jpg" alt="Social">
+<span><strong>왕콩이</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class=comment>힘든과제 할땐 좋은음악 필요합니다</span>
    </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(1).jpg" alt="bambam">
+<span><strong>뱀뱀</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class=comment>싸완찬칭</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(2).jpg" alt="yugum">
+<span><strong>유겸</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class="redbox">work</span>
+    <span class=comment>웃기는 소리하지마</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(3).jpg" alt="mark">
+<span><strong>Mark</strong></span>
+    <span class="date"><strong>1:55</strong></span>
+    <span class="skybluebox">Fun</span>
+    <span class=comment>화잇췌컬렛</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(4).jpg" alt="Social">
+<span><strong>박진영</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class=comment>박진영 그 박진영 아닙니다.</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(6).jpg" alt="Social">
+<span><strong>임재범</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class=comment>이 임재범 그 임재범 아닙니다.</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(7).jpg" alt="Social">
+<span><strong>영재</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class=comment>천재 영재 0재</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(9).jpg" alt="Social">
+<span><strong>하라구</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class=comment>진심 여신 진짜 예쁨</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(10).jpg" alt="Social">
+<span><strong>서강준</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class=comment>어마어마한 보조개</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(11).jpg" alt="Social">
+<span><strong>오세훈</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class="famailybox">famaily</span>
+    <span class=comment>잘생김 같은비니있다</span>
+  </li>
+      <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(5).jpg" alt="Social">
+<span><strong>왕콩이</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class=comment>힘든과제 할땐 좋은음악 필요합니다</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(1).jpg" alt="bambam">
+<span><strong>뱀뱀</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class=comment>싸완찬칭</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(2).jpg" alt="yugum">
+<span><strong>유겸</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class="redbox">work</span>
+    <span class=comment>웃기는 소리하지마</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(3).jpg" alt="mark">
+<span><strong>Mark</strong></span>
+    <span class="date"><strong>1:55</strong></span>
+    <span class="skybluebox">Fun</span>
+    <span class=comment>화잇췌컬렛</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(4).jpg" alt="Social">
+<span><strong>박진영</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class=comment>박진영 그 박진영 아닙니다.</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(6).jpg" alt="Social">
+<span><strong>임재범</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class=comment>이 임재범 그 임재범 아닙니다.</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(7).jpg" alt="Social">
+<span><strong>영재</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class=comment>천재 영재 0재</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(9).jpg" alt="Social">
+<span><strong>하라구</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class=comment>진심 여신 진짜 예쁨</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(10).jpg" alt="Social">
+<span><strong>서강준</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class=comment>어마어마한 보조개</span>
+   </li>
+       <li class="chat">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(11).jpg" alt="Social">
+<span><strong>오세훈</strong></span>
+    <span class="date"><strong>1:45</strong></span>
+    <span class="famailybox">famaily</span>
+    <span class=comment>잘생김 같은비니있다</span>
+  </li>
   </ul>
   </div>
   <div class="secondpage">
-<h1>Board game night? <span class="skybluebox">Fun</span><span class="graybox">Inbox</span></h1>
+  <div class="bored">
+<h1>Board game night? <span class="graybox">Inbox</span><span class="skybluebox">Fun</span></h1></div>
+ <ul class="boredcon">
+  <li class="content">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(9).jpg
+" alt="goohara">
+      <span><strong>이쁜애</strong></span>
+    <span class="date"><strong>Sep 11</strong></span>
+    <span class=comment>난예쁜데 과제헬</span>
+   </li>
+  <li class="content">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(2).jpg
+
+
+" alt="YuGum">
+      <span><strong>잘생긴애</strong></span>
+    <span class="date"><strong>Sep 11</strong></span>
+    <span class=comment>하지하지마 노래 좋음 취향저격</span>
+   </li>
+  <li class="content">
+     <img class="anotherprofile"
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(11).jpg
+
+" alt="sehun">
+      <span><strong>오세훈</strong></span>
+   <ul class="boardlist">
+    <li>
+     <img class="more_vert"
+      src="http://google.github.io/material-design-icons/navigation/svg/ic_more_vert_24px.svg
+" alt="more_vert">
+    </li>
+  <li>
+   <img class="forward"
+      src="http://google.github.io/material-design-icons/content/svg/ic_forward_24px.svg" alt="forward">
+    </li>
+    <li>
+   <img class="reply"
+      src="http://google.github.io/material-design-icons/content/svg/ic_reply_24px.svg
+" alt="reply">
+    </li>
+
+</ul>
+    <p><span class=comment>난 멋져 잘생겼어 젊어</span><p>
+    <p><span class=comment>Sep 11 <a href="#">View details</a></span><p>
+   </li>
+    <li class="content">
+    <p><span><strong>Sunday works! If you can get Dexter and Sophie Iwill handle the chips and salsa.</strong></span><p>
+    <p><a href="#">▶ Show quoted text</a><p>
+   </li>
+  </ul>
+    <ul class="boardlist_sec">
+      <li>
+   <img class="reply"
+      src="http://google.github.io/material-design-icons/content/svg/ic_reply_24px.svg
+" alt="reply">
+    </li>
+    <li>
+     <img class="reply_all"
+      src="http://google.github.io/material-design-icons/content/svg/ic_reply_all_24px.svg
+" alt="reply_all">
+    </li>
+  <li>
+   <img class="forward"
+      src="http://google.github.io/material-design-icons/content/svg/ic_forward_24px.svg" alt="forward">
+    </li>
+          <li class="text">
+  reply
+    </li>
+    <li class="text">
+     reply all
+    </li>
+  <li class="text">
+  forward
+    </li>
+</ul>
     </div>
  <div class="bottom">
    </div>
