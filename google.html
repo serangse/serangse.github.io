@@ -74,6 +74,7 @@
             width: 40%;
             left: 0;
             z-index: 1;
+            padding: 0;
         }
         section.content {
             width: 60%;
@@ -86,11 +87,10 @@
     ul {list-style-type: none;
     padding-left: 0;}
    header > h1 {
-   margin: 0;
    display: inline;
    font-weight: normal;
      font-size:16px;
-   margin: 0 0 0 10px;
+   margin: 0 0 0 30px;
    vertical-align: top;
    }
    .search {
@@ -112,14 +112,14 @@
                border-radius: 15px;
               }
     .leftmenulist{
-     margin: 0;
-     padding: 30px 10px 30px 10px;
+     margin: 30px 10px 30px 10px;
+     padding-left: 0;
       }
     .leftmenulist > li {
       margin: 1em 0;
     }
     .otherpeoplelist{
-       padding: 100px 10px 30px 10px;
+       margin: 100px 10px 30px 10px;
     }
     
    .otherprofile {width: 23px;
@@ -129,9 +129,11 @@
    }
   .num {
       background-color: white;
-      border-radius: 3px;
+      border-radius: 2.5px;
       box-shadow: 1px 1px 2px #666;
-      font-size: 0.5em;
+      font-size: 0.8em;
+      text-align: left;
+      padding:0 5px 0;
   }
   .leftmenubar { 
     margin: 45px 0 0 0;
@@ -143,14 +145,17 @@
     }
     .penshape {
                background-color: #da4336;
-               width: 40px;
-               height: 40px;
-               padding: 2px;
-               margin: 43% 0 0 32%;    
-               border: 1px soild blue;
-               border-radius: 21px;
+               width: 50px;
+               height: 50px;
+               padding: 10px;
+               right: 61%;
+               bottom: 30px;    
+               border: 6px soild;
+               border-radius: 25px;
                position: fixed;
     }
+    .inbox {border: 6px soild;
+       }
     /*첫번째*/
     .anotherprofile {width: 30px;
                height: 30px;
@@ -166,7 +171,7 @@
     margin: 0;
     padding:0 10px 0;
     float: right;
-    font-size: 0.5em;}
+    font-size: 0.9em;}
     p {margin: 0;}
     .comment {font-size: 0.9em;
     color: gray;
@@ -174,9 +179,6 @@
     .bulebox {background-color: #4985e6;
     margin: 10px 0 0 0;
    }
-    .comment {font-size: 0.9em;
-    color: gray;
-    }
     .chat {
      margin: 0;
      padding: 10px 20px 10px 0;
@@ -210,19 +212,19 @@
     padding:0 10px 0;
     color: white;
     float: right;
-    font-size: 0.5em;}
+    font-size: 0.9em;}
     .famailybox {background-color: #98d7e4;
     margin: 0;
     padding:0 10px 0;
     float: right;
-    font-size: 0.5em;}
+    font-size: 0.9em;}
     .chat .skybluebox {background-color: #b6cff5;
     margin: 0;
     padding:0 10px 0;
     color: white;
     float: right;
     color: #314c85;
-    font-size: 0.5em;}
+    font-size: 0.9em;}
 
     .coloricon {width: 24px;
                height: 24px;    
@@ -235,9 +237,12 @@
     padding:0 10px 0;
     color: gray;
     float: right;
-    font-size: 0.5em;
+    font-size: 1em;
     }
     .title {font-size: 0.8em;}
+    .chose {background-color: #e3edfe;
+      border-left: 3px solid #4285f4;
+    }
     /*두번째*/
 .bored{
      border-bottom: 1px solid #d0d0d0;
@@ -261,14 +266,6 @@
      .boredcon {
     padding: 0;
     margin: 0;}
-    .date 
-    {
-    margin: 0;
-    padding:0 10px 0;
-    color: gray;
-    float: right;
-    font-size: 0.5em;
-    }
     a {text-decoration: none;
     color: #4584e7;}
     .boardlist > li {
@@ -286,41 +283,44 @@
     width: 33%;
     text-align: center;
      }
+     .inbox {background-color: #e3e3e3;}
          @media (max-width: 1024px) {
       section.content {display: none;}
       section.list {width: 100%}
+      .penshape {right: 5%;
+               }
      }
     </style>
 </head>    
 <body>
     <header>
          <img class="menu"
-      src="http://google.github.io/material-design-icons/navigation/svg/ic_menu_24px.svg" alt="menu">
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9D%B0%EC%83%89/ic_menu_24px.svg" alt="menu">
   <h1>Primary</h1>
   <img class="search"
-      src="http://google.github.io/material-design-icons/action/svg/ic_search_24px.svg" alt="search">
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9D%B0%EC%83%89/ic_search_24px.svg" alt="search">
   <ul class="menulist">
   <li>
    <img class="more_vert"
-      src="http://google.github.io/material-design-icons/navigation/svg/ic_more_vert_24px.svg
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9D%B0%EC%83%89/ic_more_vert_24px.svg
 " alt="more_vert">
     </li>
 <li>
    <img class="folder"
-      src="http://google.github.io/material-design-icons/file/svg/ic_folder_24px.svg" alt="folder">
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9D%B0%EC%83%89/ic_folder_24px.svg" alt="folder">
     </li>
   <li>
      <img class="email"
-      src="http://google.github.io/material-design-icons/communication/svg/ic_email_24px.svg
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9D%B0%EC%83%89/ic_email_24px.svg
 " alt="email">
     </li>
 <li>
       <img class="delete"
-      src="http://google.github.io/material-design-icons/action/svg/ic_delete_24px.svg" alt="delete">
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9D%B0%EC%83%89/ic_delete_24px.svg" alt="delete">
     </li>
 <li>
      <img class="archive"
-      src="http://google.github.io/material-design-icons/content/svg/ic_archive_24px.svg" alt="archive">
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9D%B0%EC%83%89/ic_archive_24px.svg" alt="archive">
     </li>
 </ul>
 
@@ -334,23 +334,23 @@
       src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%83%88.jpg
 " alt="proflie">
     </li>
-     <li>
+     <li class>
    <img class="inbox"
       src="http://google.github.io/material-design-icons/content/svg/ic_inbox_24px.svg" alt="folder">
     </li>
   <li>
      <img class="group"
-      src="http://google.github.io/material-design-icons/social/svg/ic_group_24px.svg
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9A%8C%EC%83%89/ic_group_24px.svg
 
 " alt="email">
     </li>
     <li>
       <img class="delete"
-      src="http://google.github.io/material-design-icons/maps/svg/ic_local_offer_24px.svg" alt="local_offer">
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9A%8C%EC%83%89/ic_local_offer_24px.svg" alt="local_offer">
     </li>
     <li>
      <img class="archive"
-      src="http://google.github.io/material-design-icons/action/svg/ic_info_24px.svg" alt="archive">
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9A%8C%EC%83%89/ic_info_24px.svg" alt="info">
     </li>
 </ul>
   <ul class="otherpeoplelist">
@@ -359,14 +359,14 @@
    <img class="otherprofile"
       src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(1).jpg
 " alt="bambam"></div>
-<div class="num">15</div>
+<span class="num">15</span>
     </li>
       <li>
         <div class="numpic">
    <img class="otherprofile"
 src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(4).jpg
 " alt="Jr"></div>
-        <div class="num">10</div>
+        <span class="num">10</span>
     </li>
 </ul>
 
@@ -375,7 +375,7 @@ src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-
         <section class="list pane">
            
 <div class="pen"> <img class="penshape"
-      src="http://google.github.io/material-design-icons/editor/svg/ic_mode_edit_24px.svg
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9D%B0%EC%83%89/ic_mode_edit_24px.svg
 " alt="Social"></div>
 
 
@@ -384,7 +384,7 @@ src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-
  <ul class="chatting">
   <li class="chat">
      <img class="coloricon"
-      src="http://google.github.io/material-design-icons/social/svg/ic_group_24px.svg
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EC%83%89/ic_group_24px.svg
 " alt="Social">
       <span><strong>Social</strong></span>
     <span class="bulebox">1 new</span>
@@ -392,7 +392,7 @@ src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-
    </li>
   <li class="chat">
      <img class="coloricon"
-      src="http://google.github.io/material-design-icons/maps/svg/ic_local_offer_24px.svg
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EC%83%89/ic_local_offer_24px.svg
 
 " alt="local_offer">
       <span><strong>promotion</strong></span>
@@ -401,7 +401,7 @@ src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-
    </li>
   <li class="chat">
      <img class="coloricon"
-      src="http://google.github.io/material-design-icons/action/svg/ic_info_24px.svg
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EC%83%89/ic_info_24px.svg
 " alt="info">
       <span><strong>Updates</strong></span>
     <span class="yellowbox">1 new</span>
@@ -421,7 +421,7 @@ src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-
     <span class="date"><strong>1:24</strong></span>
     <span class=comment>싸완찬칭 천국 칠층 가면 뭐든 할수있어영</span>
    </li>
-       <li class="chat">
+       <li class="chat chose">
      <img class="anotherprofile"
       src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B5%AC%EA%B8%80%20(2).jpg" alt="yugum">
 <span><strong>유겸</strong></span>
@@ -604,16 +604,16 @@ src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-
    <ul class="boardlist">
     <li>
      <img class="more_vert"
-      src="http://google.github.io/material-design-icons/navigation/svg/ic_more_vert_24px.svg
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9A%8C%EC%83%89/ic_more_vert_24px.svg
 " alt="more_vert">
     </li>
   <li>
    <img class="forward"
-      src="http://google.github.io/material-design-icons/content/svg/ic_forward_24px.svg" alt="forward">
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9A%8C%EC%83%89/ic_forward_24px.svg" alt="forward">
     </li>
     <li>
    <img class="reply"
-      src="http://google.github.io/material-design-icons/content/svg/ic_reply_24px.svg
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9A%8C%EC%83%89/ic_reply_24px.svg
 " alt="reply">
     </li>
 
@@ -629,17 +629,17 @@ src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-
     <ul class="boardlist_sec">
       <li>
    <img class="reply"
-      src="http://google.github.io/material-design-icons/content/svg/ic_reply_24px.svg
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9A%8C%EC%83%89/ic_reply_24px.svg
 " alt="reply"><p class="text">reply</p>
     </li>
     <li>
      <img class="reply_all"
-      src="http://google.github.io/material-design-icons/content/svg/ic_reply_all_24px.svg
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9A%8C%EC%83%89/ic_reply_all_24px.svg
 " alt="reply_all"> <p class="text">reply all</p>
     </li>
   <li>
    <img class="forward"
-      src="http://google.github.io/material-design-icons/content/svg/ic_forward_24px.svg" alt="forward"><p class="text">forward</p>
+      src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%ED%9A%8C%EC%83%89/ic_forward_24px.svg" alt="forward"><p class="text">forward</p>
     </li>
 
 </ul>
