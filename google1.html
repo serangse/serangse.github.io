@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Primary</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <style>
+    @media screen and (max-width: 800px) {
+section.content.pane {display: none;}
+}
+   
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        header, section.pane {
+            padding: 1em 1em 0.6em 1em;
+        }
+
+        header {
+            height: 52px;
+            background-color: #DA4336;
+            color: white;
+            vertical-align: top;
+        }
+
+        header .menu {
+            display: inline-block;
+            width: 50px;
+        }
+
+        header h1 {
+            display: inline;
+            font-size: 1rem;
+            font-weight: normal;
+            vertical-align: top;
+        }
+
+        section.side {
+            position: absolute;
+            top: 52px;
+            left: 0;
+            width: 64px;
+            bottom: 0;
+            background-color: white;
+        }
+        section.mainarea {
+            position: absolute;
+            top: 52px;
+            left: 64px;
+            right: 0;
+            bottom: 0;
+            background-color: white;
+            box-shadow: -1px 0px 6px #CCC;
+        }
+
+        section.list,
+        section.content {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            background-color: white;
+            box-shadow: -1px 0px 6px #CCC;
+            overflow-y: scroll;
+        }
+
+        section.list {
+            width: 40%;
+            left: 0;
+            z-index: 1;
+        }
+        section.content {
+            width: 60%;
+            right: 0;
+        }
+        h3 {
+          font-size: 20px;
+        }
+            h2 {
+        display: inline-block;
+      }
+     .profile {
+      border-radius: 50%;
+      width: 80%;
+            }
+      .profile2 {
+        width: 30px;
+      border-radius: 50%;
+      float: left;
+      margin-right: 20px;
+      margin-top: 3px;
+                 }     
+       .fun {
+        background-color: #b5cef4;
+        color: #33508a;
+        padding: 0 5px 0 5px;
+        margin-right: 3px;
+           }
+           .inbox {
+        background-color: #dddddd;
+        color: #868686;
+        padding: 0 5px 0 5px;
+        margin-right: 3px;
+           }
+           ol {
+            padding-left: 0;
+            list-style-type: none;
+           }
+           .mainarea .icon {
+            float: left;
+            margin: 5px 3px;
+           }
+           .mainarea h2 {
+            font-size: 1em;
+            margin-left: 10
+           } 
+           .pane li { 
+            list-style-type: none;
+           }
+           h2, h3, p {
+            margin: 0;
+           }
+
+           h3 {
+            font-size: 1em;
+           }
+           .messagelist {
+            border-bottom: 1px solid #ececec;
+            max-width: 900px;
+            padding: 5px;
+           }
+           .show {
+            color: #046df1
+           }
+           .pen {
+           background-color: #da4336;
+           width: 50px;
+           border-radius: 50%;
+          position: fixed;
+          margin: 30%;
+           }
+           .search {
+            margin-left: 900%;
+           }
+           .blue {
+            background-color: #4986e7;
+            color: white;
+            padding: 0 20px;
+                    }
+           
+       </style>
+</head>    
+<body>
+    <header>
+       <div class="menu">
+     <img src="http://google.github.io/material-design-icons/navigation/svg/ic_menu_24px.svg" alt="menu">
+        </div>
+        <h1>Primary</h1>
+        <div class="menu icon">
+        <img class="search" src="http://google.github.io/material-design-icons/action/svg/ic_search_24px.svg" alt="search">
+      </div>
+
+    </header>
+
+    <section class="side pane">
+        <div>
+        <img class="profile" src="https://a71079eb6a72a53f01ca4edc51a31f239cb39e55.googledrive.com/host/0B8OzB6gB2MvpamdFY2dSdlBKV2M/qPNIqnCazdRtYF_L2IEZmSwvVcWXWhAYQAlBE8dvaeafsTl5tV5HI092btEkJSsiqZc=w300.png" alt="profile">
+      <img class="side icon" src="http://google.github.io/material-design-icons/content/svg/ic_inbox_24px.svg" alt="menu">
+      <img class="side icon" src="http://google.github.io/material-design-icons/social/svg/ic_group_24px.svg" alt="menu">
+      <img class="side icon" src="http://google.github.io/material-design-icons/maps/svg/ic_local_offer_24px.svg" alt="menu">
+    <img class="side icon" src="http://google.github.io/material-design-icons/action/svg/ic_info_24px.svg" alt="menu">
+    </div>
+      
+      
+    </section>
+    <section class="mainarea">
+        <section class="list pane">
+          <div><img class="pen"
+src="http://google.github.io/material-design-icons/image/svg/ic_edit_24px.svg" alt="pen"></div>
+          <ol>
+          <li class="messagelist">
+          <img class="social icon" src="http://google.github.io/material-design-icons/social/svg/ic_group_24px.svg" alt="social">
+       <h2>Social</h2>
+    <p class="text">Google+</p>
+    <span class="blue">1 new</span>
+  </li>
+
+  <li class="messagelist">
+    <img class="promotions icon" src="http://google.github.io/material-design-icons/maps/svg/ic_local_offer_24px.svg" alt="promotions">
+  <h2>Promotions</h2>
+    <p class="text">Zagat, Google Offers</p>
+  </li>
+    <li class="messagelist">
+    <img class="updates icon" src="http://google.github.io/material-design-icons/action/svg/ic_info_24px.svg" alt="updates">
+  <h2>Updates</h2>
+    <p class="text">Google Play</p>
+  </li>
+    
+      <li class="messagelist">
+        <img class="Andy profile2" src="https://a71079eb6a72a53f01ca4edc51a31f239cb39e55.googledrive.com/host/0B8OzB6gB2MvpamdFY2dSdlBKV2M/qPNIqnCazdRtYF_L2IEZmSwvVcWXWhAYQAlBE8dvaeafsTl5tV5HI092btEkJSsiqZc=w300.png" alt="Andy">
+      <h3>Andy Brown</h3>
+      <p class="title">Bring Your Parents to Work Day!</p>
+      </li>
+    
+      <li class="messagelist">
+        <img class="Keri profile2" src="https://a71079eb6a72a53f01ca4edc51a31f239cb39e55.googledrive.com/host/0B8OzB6gB2MvpamdFY2dSdlBKV2M/RdqDMEMQtiwV3J_Eg1_TQXqqEvIOcp_Qmh-4dpuaTpspWYN9Gwkz2q-a8JcZ3X0img=w300.png" alt="Keri">
+      <h3>Keri Anderson</h3>
+      <p class="title">Picture from last Saturday</p>
+      <p class="message">Check out the new friend we made, Merrill and I ran into him</p>
+      <img class="staroutline" src="http://google.github.io/material-design-icons/toggle/svg/ic_star_outline_24px.svg" alt="star outline">
+      </li>
+      
+      <li class="messagelist">
+        <img class="Regis profile2" src="https://a71079eb6a72a53f01ca4edc51a31f239cb39e55.googledrive.com/host/0B8OzB6gB2MvpamdFY2dSdlBKV2M/RdqDMEMQtiwV3J_Eg1_TQXqqEvIOcp_Qmh-4dpuaTpspWYN9Gwkz2q-a8JcZ3X0img=w300.png" alt="Regis">
+      <h3>Regis, Peter, Rachel 3</h3>
+      <p class="title">Board game night?</p>
+      <p class="message">Sunday works! If you can get Dexter and Sophie I will</p>
+      <img class="star" src="http://google.github.io/material-design-icons/toggle/svg/ic_star_24px.svg" alt="star">
+       </li>
+          
+      <li class="messagelist">
+        <img class="Aruna profile2" src="https://a71079eb6a72a53f01ca4edc51a31f239cb39e55.googledrive.com/host/0B8OzB6gB2MvpamdFY2dSdlBKV2M/WGvq7QKPpBSlxYcRQ7ZqGsG70-I0a_ya6FNWfaUg1yN-sVaKo1yOjLIQCeCWpN1Hwhc.png" alt="Aruna">
+        <h3>Aruna Knight</h3>
+      <p class="title">Book you recommended</p>
+      <p class="message">About to go on a trip and was hoping to start that</p>
+      <img class="star" src="http://google.github.io/material-design-icons/toggle/svg/ic_star_24px.svg" alt="star">
+       </li>
+          
+      <li class="messagelist">
+        <img class="Paul profile2" src="https://a71079eb6a72a53f01ca4edc51a31f239cb39e55.googledrive.com/host/0B8OzB6gB2MvpamdFY2dSdlBKV2M/x9sK8BOl09EvqWsn7LGLRio5hqzewY3kpv2zlPT4a2P09yVH8wkod9lWlgpnL_1jq_w=w300.png" alt="Paul">
+        <h3>Paul Westbrook</h3>
+      <p class="title">Oops...need to reschedule<p>
+      <p class="message">That's okay Peter! I've attached a few picturesof my place</p>
+      <img class="staroutline" src="http://google.github.io/material-design-icons/toggle/svg/ic_star_outline_24px.svg" alt="star outline">
+       </li>
+      
+      <li class="messagelist">
+        <img class="Anissa profile2" src="https://a71079eb6a72a53f01ca4edc51a31f239cb39e55.googledrive.com/host/0B8OzB6gB2MvpamdFY2dSdlBKV2M/x9sK8BOl09EvqWsn7LGLRio5hqzewY3kpv2zlPT4a2P09yVH8wkod9lWlgpnL_1jq_w=w300.png" alt="Anissa">
+        <h3>Anissa Lee</h3>
+      <p class="title">Furniture we no longer need</p>
+        </li>
+        <li class="messagelist">
+        <img class="Andy profile2" src="https://a71079eb6a72a53f01ca4edc51a31f239cb39e55.googledrive.com/host/0B8OzB6gB2MvpamdFY2dSdlBKV2M/qPNIqnCazdRtYF_L2IEZmSwvVcWXWhAYQAlBE8dvaeafsTl5tV5HI092btEkJSsiqZc=w300.png" alt="Andy">
+      <h3>Andy Brown</h3>
+      <p class="title">Bring Your Parents to Work Day!</p>
+      </li>
+    
+      <li class="messagelist">
+        <img class="Keri profile2" src="https://a71079eb6a72a53f01ca4edc51a31f239cb39e55.googledrive.com/host/0B8OzB6gB2MvpamdFY2dSdlBKV2M/RdqDMEMQtiwV3J_Eg1_TQXqqEvIOcp_Qmh-4dpuaTpspWYN9Gwkz2q-a8JcZ3X0img=w300.png" alt="Keri">
+      <h3>Keri Anderson</h3>
+      <p class="title">Picture from last Saturday</p>
+      <p class="message">Check out the new friend we made, Merrill and I ran into him</p>
+      <img class="staroutline" src="http://google.github.io/material-design-icons/toggle/svg/ic_star_outline_24px.svg" alt="star outline">
+      </li>
+      
+      <li class="messagelist">
+        <img class="Regis profile2" src="https://a71079eb6a72a53f01ca4edc51a31f239cb39e55.googledrive.com/host/0B8OzB6gB2MvpamdFY2dSdlBKV2M/RdqDMEMQtiwV3J_Eg1_TQXqqEvIOcp_Qmh-4dpuaTpspWYN9Gwkz2q-a8JcZ3X0img=w300.png" alt="Regis">
+      <h3>Regis, Peter, Rachel 3</h3>
+      <p class="title">Board game night?</p>
+      <p class="message">Sunday works! If you can get Dexter and Sophie I will</p>
+      <img class="star" src="http://google.github.io/material-design-icons/toggle/svg/ic_star_24px.svg" alt="star">
+       </li>
+          
+      <li class="messagelist">
+        <img class="Aruna profile2" src="https://a71079eb6a72a53f01ca4edc51a31f239cb39e55.googledrive.com/host/0B8OzB6gB2MvpamdFY2dSdlBKV2M/WGvq7QKPpBSlxYcRQ7ZqGsG70-I0a_ya6FNWfaUg1yN-sVaKo1yOjLIQCeCWpN1Hwhc.png" alt="Aruna">
+        <h3>Aruna Knight</h3>
+      <p class="title">Book you recommended</p>
+      <p class="message">About to go on a trip and was hoping to start that</p>
+      <img class="star" src="http://google.github.io/material-design-icons/toggle/svg/ic_star_24px.svg" alt="star">
+       </li>
+      </ol>
+        </section>
+        <section class="content pane">
+           
+           <h2>Board game night?</h2>
+           <span class="fun">Fun</span><span class="inbox">Inbox</span>
+
+          <img class="star" src="http://google.github.io/material-design-icons/toggle/svg/ic_star_24px.svg" alt="star">
+    <ol>
+      <li class="messagelist">
+        <img class="Regis profile2" src="https://a71079eb6a72a53f01ca4edc51a31f239cb39e55.googledrive.com/host/0B8OzB6gB2MvpamdFY2dSdlBKV2M/FcRYT07tDk-PgPUujWbIcThr23lJOH1FriD-VXuAzY7BUL-p990hP0NpOEoWa4Swcw=w300.png" alt="Regis">
+        <h3>Regis Miller</h3>
+      <p class="message">Maria, I'm trying to schedule a board game night this week, when would you be</p>
+        </li>
+      <li class="messagelist">
+        <img class="Peter profile2" src="https://a71079eb6a72a53f01ca4edc51a31f239cb39e55.googledrive.com/host/0B8OzB6gB2MvpamdFY2dSdlBKV2M/qPNIqnCazdRtYF_L2IEZmSwvVcWXWhAYQAlBE8dvaeafsTl5tV5HI092btEkJSsiqZc=w300.png" alt="Peter">
+        <h3>Peter Johnson</h3>
+      <p class="message">What do you think about Sunday? My car seats five so I could pick up Dexter</p>
+        </li>
+      <li class="messagelist">
+        <img class="Rachel profile2" src="https://a71079eb6a72a53f01ca4edc51a31f239cb39e55.googledrive.com/host/0B8OzB6gB2MvpamdFY2dSdlBKV2M/FcRYT07tDk-PgPUujWbIcThr23lJOH1FriD-VXuAzY7BUL-p990hP0NpOEoWa4Swcw=w300.png" alt="Rachel">
+        <h3>Rachel Shin</h3>
+        <p>to me</p>
+         </li>
+    </ol>
+    <p class="">Sunday works! If you can get Dexter and soPhie I will handle the chips and salsa.</p>
+    <p class="show">Show quoted text<p>
+    </section>
+    </section>
+</body>
+</html>
