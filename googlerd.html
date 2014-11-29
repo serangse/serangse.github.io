@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Google</title>
+  <title>김세랑마지막과제</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
    <link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css'>
    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -53,10 +54,34 @@ ul {list-style-type: none;
     .option {background-color :#366ad3}
 .upper {float: right;}
     .jet {color: #696969;}
-    .content {padding: 210px 0 0 0; 
+    .content {padding: 0 0 0 0; 
     }
     .bustime {padding: 0 1em 1em 3em;
     margin: 0;}
+    .conlist { position: absolute;
+            top: 220px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            }
+  .trans {
+  padding: 0 0 1em 5.2em;
+  color: #696969;
+  }
+    .bluebox {background-color: #3a56ee;
+    padding: 0 0.3em;
+    margin: 0 0.3em;
+    color: white;}
+    .fa-bus {margin: 0 0.3em;}
+    .braket {font-size: 0.5em;
+    margin: 0 0.3em;
+    }
+    .person {margin: 0 0.3em;
+    font-size: 1.2em;}
+    .small {font-size: 0.9em;}
+    .everymin {padding: 0 2em;}
+    .content {
+    border-bottom: 1px solid #e2e2e2;}
   </style>
 </head>
 <body>
@@ -101,16 +126,43 @@ ul {list-style-type: none;
        <span class="upper">OPTIONS</span>
      </div>
    </header>
+   <section class="conlist">
   <div class="content">
-  <ul contents>
-<li><i class="bustime fa fa-fighter-jet"></i> <strong>4:09-5:35PM 1hr 25min</strong>
- 
-</i></li>
-  <li><i class="bustime fa fa-child"></li>
-    
+  <ul class="contents">
+<li><i class="bustime fa fa-fighter-jet"></i> <strong>4:09 - 5:35 PM 1hr 25min</strong></li>
+  <li class="trans"><i class="person fa fa-child"></i><span class="braket"> > </span><i class="fa fa-bus"></i> <span class="bluebox">1-1</span><span class="braket"> ></span> <i class="fa fa-bus"></i> <span class="bluebox">441</span></li>
+<li class="trans"> 4:25 PM from 계원예술대학교</li>
+<li class="trans"> <span class="term"><i class="small person fa fa-child"></i> 10 min <span class="everymin">Every 12 min</span></li>
 </ul>
   </div>
-
+     <div class="content">
+  <ul class="contents">
+<li><i class="bustime fa fa-fighter-jet"></i> <strong>4:09 - 5:41 PM 1hr 31min</strong></li>
+  <li class="trans"><i class="person fa fa-child"></i><span class="braket"> > </span><i class="fa fa-bus"></i> <span class="bluebox">1-1</span><span class="braket"> ></span> <i class="fa fa-bus"></i>
+    <span class="braket"> ></span> <i class="fa fa-bus"></i></li>
+<li class="trans"> 4:25 PM from 계원예술대학교</li>
+<li class="trans"> <span class="term"><i class="small person fa fa-child"></i> 10 min <span class="everymin">Every 12 min</span></li>
+</ul>
+  </div>
+     <div class="content">
+  <ul class="contents">
+<li><i class="bustime fa fa-fighter-jet"></i> <strong>4:09 - 5:49 PM 1hr 39min</strong></li>
+  <li class="trans"><i class="person fa fa-child"></i><span class="braket"> > </span><i class="fa fa-bus"></i> <span class="bluebox">51</span><span class="braket"> ></span> <i class="fa fa-bus"></i>
+    <span class="braket"> ></span> <i class="fa fa-bus"></i></li>
+<li class="trans"> 4:22 PM from 계원예술대학교</li>
+<li class="trans"> <span class="term"><i class="small person fa fa-child"></i> 10 min <span class="everymin">Every 12 min</span></li>
+</ul>
+  </div>
+     <div class="content">
+  <ul class="contents">
+<li><i class="bustime fa fa-fighter-jet"></i> <strong>4:09 - 5:47 PM 1hr 39min</strong></li>
+  <li class="trans"><i class="person fa fa-child"></i><span class="braket"> > </span><i class="fa fa-bus"></i> <span class="bluebox">51</span><span class="braket"> ></span> <i class="fa fa-bus"></i>
+    <span class="braket"> ></span> <i class="fa fa-bus"></i></li>
+<li class="trans"> 4:22 PM from 계원예술대학교</li>
+<li class="trans"> <span class="term"><i class="small person fa fa-child"></i> 10 min <span class="everymin">Every 12 min</span></li>
+</ul>
+  </div>
+</section>
  
 </body>
 </html>
