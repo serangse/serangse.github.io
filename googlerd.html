@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +11,8 @@
   <style>
     html {display: inline;}
  body {
-     font-family: 'Open Sans','Nanum Gothic', sans-serif;
-       margin: 0;}
+     font-family: 'Open Sans','Nanum Gothic', sans-serif;     
+ }
      header {
     position: fixed;
     left: 0;
@@ -19,6 +20,7 @@
     background-color: #4688f1;
        margin: 0;
   }
+    .totalpage {padding: 0 30%;}
   .chose {color: white;}
   .nomal {color: #aac9f8;}
 ul {list-style-type: none;
@@ -33,6 +35,7 @@ ul {list-style-type: none;
      display: inline;
      
     }
+   
    .start {padding: 1em 1em 1em 3em;
     color: white;}
     .firsticon {padding: 0 1em 0 0;}
@@ -43,7 +46,7 @@ ul {list-style-type: none;
   padding: 0 70% 20px 0;
 }
 .option {padding: 1em 1.5em 1em 2.9em;
-    color: white;} 
+    color: #ebf0fb;} 
     .fin {padding: 0 1em 1em 3em;
     margin: 0;}
     .arrow {float: right;
@@ -52,7 +55,8 @@ ul {list-style-type: none;
     .threeE {float: left;
     padding: 0 0 0 0.2em;}
     .option {background-color :#366ad3}
-.upper {float: right;}
+.upper {float: right;
+}
     .jet {color: #696969;}
     .content {padding: 0 0 0 0; 
     }
@@ -85,9 +89,14 @@ ul {list-style-type: none;
     .everymin {padding: 0 2em;}
     .content {
     border-bottom: 1px solid #e2e2e2;}
+    
+     @media (max-width: 800px) {
+      .time {float: right;}
+     }
   </style>
 </head>
 <body>
+  <div class="totalpage">
    <header>
    <div class="topicon">
   <ul class="toplist">
@@ -126,7 +135,7 @@ ul {list-style-type: none;
 </ul>
      </div>
      <div class="option">
-      <i class="firsticon fa fa-sliders"></i>
+      <i class="nomal firsticon fa fa-sliders"></i>
   <span class="depart">Depart at 4:09 PM</span>
        <span class="upper">OPTIONS</span>
      </div>
@@ -134,7 +143,7 @@ ul {list-style-type: none;
    <section class="conlist">
   <div class="content">
   <ul class="contents">
-<li><i class="bustime fa fa-fighter-jet"></i> <strong>4:09 - 5:35 PM 1hr 25min</strong></li>
+<li><i class="bustime fa fa-fighter-jet"></i> <strong>4:09 - 5:35 <span class="time">PM 1hr 25min</span></strong></li>
   <li class="trans"><i class="person fa fa-child"></i><span class="braket"> > </span><i class="fa fa-bus"></i> <span class="bluebox">1-1</span><span class="braket"> ></span> <i class="fa fa-bus"></i> <span class="bluebox">441</span></li>
 <li class="trans"> 4:25 PM from 계원예술대학교</li>
 <li class="trans"> <span class="term"><i class="small person fa fa-child"></i> 10 min </span><span class="everymin">Every 12 min</span></li>
@@ -142,7 +151,7 @@ ul {list-style-type: none;
   </div>
        <div class="content">
   <ul class="contents">
-<li><i class="bustime fa fa-fighter-jet"></i> <strong>4:09 - 5:41 PM 1hr 31min</strong></li>
+<li><i class="bustime fa fa-fighter-jet"></i> <strong>4:09 - 5:41 <span class="time">PM 1hr 31min</span></strong></li>
   <li class="trans"><i class="person fa fa-child"></i><span class="braket"> > </span><i class="fa fa-bus"></i> <span class="bluebox">1-1</span><span class="braket"> ></span> <i class="fa fa-bus"></i>
     <span class="braket"> ></span> <i class="fa fa-bus"></i></li>
 <li class="trans"> 4:25 PM from 계원예술대학교</li>
@@ -168,6 +177,6 @@ ul {list-style-type: none;
 </ul>
        </div>
 </section>
- 
+</div> 
 </body>
 </html>
