@@ -19,8 +19,10 @@
     right: 0;
     background-color: #4688f1;
        margin: 0;
+       z-index: 1;
   }
-    .totalpage {padding: 0 30%;}
+    .totalpage {margin: 0 auto;
+    max-width: 1000px;}
   .chose {color: white;}
   .nomal {color: #aac9f8;}
 ul {list-style-type: none;
@@ -90,13 +92,11 @@ ul {list-style-type: none;
     .content {
     border-bottom: 1px solid #e2e2e2;}
     
-     @media (max-width: 800px) {
-      .time {float: right;}
-     }
   </style>
 </head>
 <body>
-  <div class="totalpage">
+  <div class="total">
+    <div class="totalpage">
    <header>
    <div class="topicon">
   <ul class="toplist">
@@ -177,6 +177,7 @@ ul {list-style-type: none;
 </ul>
        </div>
 </section>
+      </div>
 </div> 
 </body>
 </html>
