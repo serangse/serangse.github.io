@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>다음</title>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <style>
+* {font-family: "Nanum Gothic", "AppleGothic", "Malgun Gothic", Sans-serif;}
+ol {
+  padding-left:0;
+  list-style-type:none;
+  display:inline-block;
+}
+ul {padding-left:0;
+margin: 0;}
+    li {display:inline-block;}
+header {
+  position:fixed;
+  left: 0;
+right: 0;
+background-color: #4688f1;
+  color:white;
+  z-index: 1;
+  height:150px;
+}
+.option {background-color: #366ad3;
+  position:fixed;
+  left:0;
+  right:0;
+height:20px;}  
+.second {
+  background-color :#366ad3;
+left:0;
+right:0;
+ padding: 3%;
+  height:0px;
+}   
+ .rec {
+   padding: 0 6px;
+    margin-left:6px;
+   color:white;
+ }
+    .options {float:right;}
+    .lefticon {color: #777;}
+    .icon {color: #777;}
+    .blue {background-color: #3a56ee;}
+   .green {background-color: #1fb923;}
+    .red {background-color: #cc4517;}
+   .every {margin: 20px;}
+    .list {border-bottom: 1px solid #f4f4f4;}
+    .text {color: #8f8f8f;}
+    .time {font-weight: bold;}
+    .right {margin-left: 30px;}
+    .kaywon {margin-top:10px;}
+    .lefticon {float:left;
+    margin-right: 30px;}
+    .icon3 {margin-right:30px;}
+
+    @media screen and (max-width:500px) {
+        .main {
+          width: auto;
+        }
+      .right: {
+        width: auto;
+      }
+       }
+ .list {
+   left: 0;
+            right: 0;
+            bottom: 0;
+position:relative;
+   top:90px;
+        overflow: scroll;
+         overflow-x: hidden;
+   overflow-y: hidden;
+      margin: 0 auto;}
+   .출발 {padding: 3%;}
+
+.option {padding: 3%;
+    color: #ebf0fb;
+  position:fixed;
+  background-color :#366ad3;
+left:0;
+  right:0;
+} 
+    .fin {padding: 0 2% 2% 3%;
+    margin: 0;}
+  </style>
+</head>
+<body>
+<header>
+     <div class="전체">
+   <div class="topicons">
+  <ul class="icon3">
+  <li><i class="forward fa fa-arrow-left"></i></li>
+<li><i class="fa fa-car"></i></li>
+  <li><i class="fa fa-bus"></i></li>
+<li><i class="fa fa-child"></i></li>
+</ul>
+ </div>
+ <div>
+ <ul class="출발">
+  <li>
+  <i class="firsticon fa fa-map-marker"></i>
+  <span class="kaywon">계원예술대학교</span></li>
+ <li><i class="threeE fa fa-ellipsis-v"></i>
+  </li>
+   <li>
+     <i class="arrow fa fa-arrows-v"></i>
+     </li>
+
+   </div>
+ <div>
+ <ul class="2">
+  <li>
+  <i class="firsticon fa fa-map-marker"></i>
+  <span class="신사동">신사동가로수길</span></li>
+ 
+</ul>
+     </div>
+   </div>
+   <div>
+     <div class="option">
+  <span><i class="nomal firsticon fa fa-sliders"></i> Depart at 4:09 PM</span>
+       <span>OPTIONS</span>   
+  </div>
+  </header>
+  <section class="list">
+  <div class="list 1">
+    <ul>
+      <li>
+        <div class="lefticon">
+          <p class="left"><i class="fa fa-bus"></i></p>
+        </div>
+        <div class="time">
+          <p>4:09 - 5:35PM<span class="right">1 hr 25 min</span></p>
+        </div>
+        <div class="icon">
+          <ol>
+          <li><i class="fa fa-female"></i></li>
+            <li><i class="fa fa-angle-right"></i></li>
+            <li><i class="fa fa-bus"></i><span class="blue rec">1-1</span></li>
+            <li><i class="fa fa-angle-right"></i></li>
+             <li><i class="fa fa-bus"></i><span class="blue rec">441</span></li>
+            </ol>
+        </div>
+        <div class="text">
+          <p class="kaywon">4:25 PM from 계원예술대학교</p>
+          <p><i class="fa fa-female"></i><span>10 min</span><span class="every">Every 10 min</span></p>
+          </div>
+      </li>
+    </ul>
+    </div>
+  
+    <div class="list 2">
+    <ul>
+      <li>
+        <div class="lefticon">
+          <p><i class="fa fa-bus"></i></p>
+        </div>
+        <div class="time">
+          <p>4:09 - 5:35PM<span class="right">1 hr 31 min</span></p>
+        </div>
+        <div class="icon">
+          <ol>
+          <li><i class="fa fa-female"></i></li>
+            <li><i class="fa fa-angle-right"></i></li>
+            <li><i class="fa fa-bus"></i><span class="blue rec">1-1</span></li>
+            <li><i class="fa fa-angle-right"></i></li>
+             <li><i class="fa fa-bus"></i><span class="green rec">4318</span></li>
+            <li><i class="fa fa-angle-right"></i></li>
+             <li><i class="fa fa-bus"></i><span class="red rec">9404</span></li>
+            </ol>
+        </div>
+        <div class="text">
+          <p class="kaywon">4:25 PM from 계원예술대학교</p>
+          <p><i class="fa fa-female"></i><span>10 min</span><span class="every">Every 12 min</span></p>
+          </div>
+      </li>
+    </ul>
+    </div>
+  
+    <div class="list 3">
+    <ul>
+      <li>
+          <p class="lefticon"><i class="fa fa-bus"></i></p>
+        <div class="time">
+          <p>4:09 - 5:49PM<span class="right">1 hr 39 min</span></p>
+        </div>
+        <div class="icon">
+          <ol>
+          <li><i class="fa fa-female"></i></li>
+            <li><i class="fa fa-angle-right"></i></li>
+            <li><i class="fa fa-bus"></i><span class="blue rec">51</span></li>
+            <li><i class="fa fa-angle-right"></i></li>
+             <li><i class="fa fa-bus"></i><span class="blue rec">540</span></li>
+            <li><i class="fa fa-angle-right"></i></li>
+             <li><i class="fa fa-bus"></i><span class="blue rec">148</span></li>
+            </ol>
+        </div>
+        <div class="text">
+          <p class="kaywon">4:25 PM from 계원예술대학교</p>
+          <p><i class="fa fa-female"></i><span>10 min</span><span class="every">Every 10 min</span></p>
+          </div>
+      </li>
+    </ul>
+    </div>
+  
+    <div class="list 4">
+    <ul>
+      <li>
+         <p class="lefticon"><i class="fa fa-bus"></i></p>
+          <p class="time">4:09 - 5:47PM<span class="right">1 hr 38 min</span></p>
+        <div class="icon">
+          <ol>
+          <li><i class="fa fa-female"></i></li>
+            <li><i class="fa fa-angle-right"></i></li>
+            <li><i class="fa fa-bus"></i><span class="blue rec">51</span></li>
+            <li><i class="fa fa-angle-right"></i></li>
+             <li><i class="fa fa-bus"></i><span class="red rec">3030</span></li>
+            <li><i class="fa fa-angle-right"></i></li>
+             <li><i class="fa fa-bus"></i><span class="blue rec">145</span></li>
+            </ol>
+        </div>
+        <div class="text">
+          <p class="kaywon">4:22 PM from 계원예술대학교</p>
+          <p><i class="fa fa-female"></i><span>11 min</span><span class="every">Every 20 min</span></p>
+          </div>
+      </li>
+    </ul>
+    </div>
+  </section>
+</body>
+</html>
