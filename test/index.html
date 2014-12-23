@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>RAMRANG</title>
+
+  <style>
+ .sky {
+ 	position: absolute;
+ 	-webkit-animation: rotate 24s linear 0s infinite normal;
+ 	animation: rotate 24s linear 0s infinite normal;
+ }
+ .cloud {
+ 	position: absolute;
+ 	-webkit-animation: rotate 20s linear 0s infinite normal;
+ 	animation: rotate 20s linear 0s infinite normal;
+ }
+ .small_cloud {
+ 	position: absolute;
+ 	-webkit-animation: rotate 15s linear 0s infinite normal;
+ 	animation: rotate 15s linear 0s infinite normal;
+ }
+ .small_star {
+ 	position: absolute;
+ 	-webkit-animation: rotate 24s linear 0s infinite normal;
+ 	animation: rotate 24s linear 0s infinite normal;
+ }
+ .large_star {
+ 	position: absolute;
+ 	-webkit-animation: rotate 24s linear 0s infinite normal;
+ 	animation: rotate 24s linear 0s infinite normal;
+ }
+ .moom_and_sun {
+ 	position: absolute;
+ 	-webkit-animation: rotate 24s linear 0s infinite normal;
+ 	animation: rotate 24s linear 0s infinite normal;
+ }
+ .cute_bird {
+ 	position: absolute;
+ 	-webkit-animation: translate 5s linear 0s infinite normal;
+ 	animation: translate 5s linear 0s infinite normal;
+ }
+ @-webkit-keyframes rotate {
+ 	from{
+		transform: rotate(0deg);
+ 	}
+ 	to{
+		transform: rotate(360deg);
+ 	}
+ }
+ @keyframes rotate {
+ 	from{
+		transform: rotate(0deg);
+ 	}
+ 	to{
+		transform: rotate(360deg);
+ 	}
+ }
+
+ @-webkit-keyframes translate {
+ 	from{
+		transform: translate(1vw, 40vw) scale(1.0, 1.0);
+ 	}
+ 	to{
+		transform: translate(80vw,20vw) scale(0.2, 0.2);
+ 	}
+ }
+ @keyframes translate {
+ 	from{
+		transform: translate(1vw, 40vw) scale(1.0, 1.0);
+ 	}
+ 	to{
+		transform: translate(80vw,20vw) scale(0.2, 0.2);
+ 	}
+ }
+
+body {overflow: hidden;}
+img {width: 100%;}
+.cute_bird {width: 7%;}
+.frame {
+	position: relative;
+	width: 100%;
+	height: 50vw;
+	overflow: hidden;}
+  </style>
+
+
+</head>
+<body>
+	<div class="frame">
+<img src="sky.svg" alt="sky" class="sky">
+<img src="star.svg" alt="small_star" class="small_star">
+<img src="star2.svg" alt="large_star" class="large_star">
+<img src="moom_and_sun.svg" alt="moom_and_sun" class="moom_and_sun">
+<img src="sae2.svg" alt="cute_bird" class="cute_bird">
+<img src="small_cloud.svg" alt="small_cloud" class="small_cloud">
+<img src="cloud.svg" alt="cloud" class="cloud">
+</div>
+</body>
+</html>
