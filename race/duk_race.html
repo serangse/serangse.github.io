@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>덕후레이스</title>
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css'>
+  <script src="jquery-2.1.3.min.js"></script>
+  <script>
+  $(function() {
+    var lastScrolledAt;
+
+    $(window).on('scroll', function() {
+      $('.person').addClass('run');
+      lastScrolledAt = new Date();
+
+      if(document.body.scrollLeft > 900 && document.body.scrollLeft < 3000) {
+        $('.quote_hot').addClass('xxx');
+      } else {
+        $('.quote_hot').removeClass('xxx');
+      }
+
+      if(document.body.scrollLeft > 1500 && document.body.scrollLeft < 3000) {
+        $('.quote_ses').addClass('xxx');
+        console.log($('.quote_ses'));
+      } else {
+        $('.quote_ses').removeClass('xxx');
+      }
+
+      if(document.body.scrollLeft > 3000 && document.body.scrollLeft < 4000) {
+        $('.quote_sh').addClass('xxx');
+        console.log($('.quote_sh'));
+      } else {
+        $('.quote_sh').removeClass('xxx');
+      }
+            if(document.body.scrollLeft > 4000 && document.body.scrollLeft < 6000) {
+        $('.quote_fts').addClass('xxx');
+      } else {
+        $('.quote_fts').removeClass('xxx');
+      }
+
+      if(document.body.scrollLeft >5000 && document.body.scrollLeft < 7000) {
+        $('.quote_boa').addClass('xxx');
+      } else {
+        $('.quote_boa').removeClass('xxx');
+      }
+
+      if(document.body.scrollLeft > 6000 && document.body.scrollLeft < 8000) {
+        $('.quote_tvxq').addClass('xxx');
+      } else {
+        $('.quote_tvxq').removeClass('xxx');
+      }
+            if(document.body.scrollLeft > 7000 && document.body.scrollLeft < 9500) {
+        $('.quote_sj').addClass('xxx');
+      } else {
+        $('.quote_sj').removeClass('xxx');
+      }
+
+      if(document.body.scrollLeft > 8000 && document.body.scrollLeft < 10000) {
+        $('.quote_snsd').addClass('xxx');
+      } else {
+        $('.quote_snsd').removeClass('xxx');
+      }
+
+      if(document.body.scrollLeft > 9000 && document.body.scrollLeft < 10000) {
+        $('.quote_shinee').addClass('xxx');
+        console.log($('.quote_sh'));
+      } else {
+        $('.quote_shinee').removeClass('xxx');
+      }
+            if(document.body.scrollLeft > 10000 && document.body.scrollLeft < 11500) {
+        $('.quote_fx').addClass('xxx');
+      } else {
+        $('.quote_fx').removeClass('xxx');
+      }
+
+      if(document.body.scrollLeft > 11000 && document.body.scrollLeft < 12000) {
+        $('.quote_exo').addClass('xxx');
+      } else {
+        $('.quote_exo').removeClass('xxx');
+      }
+
+      if(document.body.scrollLeft > 12000 && document.body.scrollLeft < 13000) {
+        $('.quote_rv').addClass('xxx');
+      } else {
+        $('.quote_rv').removeClass('xxx');
+      }
+    });
+
+
+    function scrollMonitor() {
+      var now = new Date();
+      if((now - lastScrolledAt) > 500) {
+        $('.person').removeClass('run');
+      }
+      window.setTimeout(scrollMonitor, 50);
+    }
+    scrollMonitor();
+  });
+  </script>
+
+  <style>
+  .quote_ses.xxx {
+    opacity: 1.0;
+  }
+  .quote_hot.xxx {
+    opacity: 1.0;
+  }
+ .quote_sh.xxx {
+    opacity: 1.0;
+  }
+    .quote_fts.xxx {
+    opacity: 1.0;
+  }
+  .quote_boa.xxx {
+    opacity: 1.0;
+  }
+ .quote_tvxq.xxx {
+    opacity: 1.0;
+  }
+    .quote_sj.xxx {
+    opacity: 1.0;
+  }
+  .quote_snsd.xxx {
+    opacity: 1.0;
+  }
+ .quote_shinee.xxx {
+    opacity: 1.0;
+  }
+    .quote_fx.xxx {
+    opacity: 1.0;
+  }
+  .quote_exo.xxx {
+    opacity: 1.0;
+  }
+ .quote_rv.xxx {
+    opacity: 1.0;
+  }
+  html {
+    height: 100%;
+  }
+  body { background-color: #c5edff;
+    margin: 0;
+    padding: 0;
+background-repeat: repeat-x;
+    background-image: url(grass.svg);
+    background-position: bottom;
+    height: 120%;
+font-family: 'Open Sans','Nanum Gothic', sans-serif;
+font-size: 1.2em;
+  }
+  div.person {
+    position: fixed;
+    left: 500px;
+    top: 250px;
+  }
+  div.person > img {
+    position: absolute;
+  }
+
+  .dukbody {
+  
+  }
+
+ .rightfoot {
+
+  top: 320px;
+  left: 72px;
+  transform-origin: 0 0;
+    transition: transform 0.5s;
+  transform: rotate(30deg);
+  }
+  .leftfoot {
+    top: 320px;
+  left: 72px;
+  transform-origin: 0 0;
+  transition: transform 0.5s;
+  transform: rotate(30deg);
+  }
+  .rightarm{
+    top:210px;
+    left:110px;
+    transform-origin: 0 0;
+    transition: transform 0.5s;
+    transform: rotate(30deg)
+  }
+
+  .leftarm{
+    top:210px;
+    left:110px;
+    transform-origin: 0 0;
+    }
+
+  .person.run .leftarm {
+    -webkit-animation: rotate_leftarm 1s linear 0s infinite alternate;
+      animation: rotate_leftarm 1s linear 0s infinite alternate;
+    }
+  @-webkit-keyframes rotate_leftarm {
+    from{
+      transform: rotate(-30deg);
+    }
+    to{
+      transform: rotate(50deg);
+    }
+  }
+  @keyframes rotate_leftarm {
+    from{
+      transform: rotate(-30deg);
+    }
+    to{
+      transform: rotate(50deg);
+    }
+  }
+
+   .person.run .rightarm {
+   -webkit-animation: rotate_rightarm 1s linear 0s infinite alternate;
+      animation: rotate_rightarm 1s linear 0s infinite alternate;
+    }
+  @-webkit-keyframes rotate_rightarm {
+    from{
+      transform: rotate(50deg);
+    }
+    to{
+      transform: rotate(-30deg);
+    }
+  }
+  @keyframes rotate_rightarm {
+    from{
+      transform: rotate(50deg);
+    }
+    to{
+      transform: rotate(-30deg);
+    }
+  }
+  .person.run .leftfoot {
+     -webkit-animation: rotate_leftfoot 1s linear 0s infinite alternate;
+      animation: rotate_leftfoot 1s linear 0s infinite alternate;
+    }
+  @-webkit-keyframes rotate_leftfoot {
+    from{
+      transform: rotate(60deg);
+    }
+    to{
+      transform: rotate(-20deg);
+    }
+  }
+  @keyframes rotate_leftfoot {
+    from{
+      transform: rotate(60deg);
+    }
+    to{
+      transform: rotate(-20deg);
+    }
+  }
+   .person.run .rightfoot {
+     -webkit-animation: rotate_rightfoot 1s linear 0s infinite alternate;
+      animation: rotate_rightfoot 1s linear 0s infinite alternate;
+    }
+  @-webkit-keyframes rotate_rightfoot {
+    from{
+      transform: rotate(-20deg);
+    }
+    to{
+      transform: rotate(60deg);
+    }
+  }
+  @keyframes rotate_rightfoot {
+    from{
+      transform: rotate(-20deg);
+    }
+    to{
+      transform: rotate(60deg);
+    }
+  }
+  .total {
+    height: 100%;
+    width: 14000px;}
+    .cloud {
+      position: absolute;
+      top: 180px; 
+      left: 3000px;
+
+    }
+
+    .cloud2{
+      position: absolute;
+      top:160px;
+      left:1400px;
+    }
+    .cloud3 {
+      position: absolute;
+      top:160px;
+      left:1800px;
+    }
+    .cloud4 {
+      position: absolute;
+      top:130px;
+      left:2300px;
+    }
+    .cloud5 {
+      position: absolute;
+      top:160px;
+      left:3400px;
+    }
+    .cloud6 {
+      position: absolute;
+      top:180px;
+      left:5800px;
+    }
+    .cloud7 {
+      position: absolute;
+      top:50px;
+      left:10000px;
+    }
+    
+    .HOT {position: absolute;
+      top:200px;
+      left:2000px;}
+    .SES {position: absolute;
+      top:200px;
+      left:3000px;}
+    .SH {position: absolute;
+      top:200px;
+      left:4000px;}
+ .FTS {position: absolute;
+      top:200px;
+      left:5000px;}
+     .boa {position: absolute;
+      top:300px;
+      left:6000px;
+      width: 15%;}
+     .TVXQ {position: absolute;
+      top:200px;
+      left:7000px;}
+     .SJ {position: absolute;
+      top:250px;
+      left:8000px;
+      width: 20%;}
+       .SNSD {position: absolute;
+      top:200px;
+      left:9000px;}
+    .SHINee {
+      position: absolute;
+      top:200px;
+      left:10000px;
+    }
+     .Fx {position: absolute;
+      top:200px;
+      left:11000px;}
+ .EXO {position: absolute;
+      top:200px;
+      left:12000px;}
+       .RV {position: absolute;
+      top:200px;
+      left:13000px;}
+
+    .cloud , .cloud3{
+      -webkit-animation: translate 1.5s linear 0s infinite alternate;
+  animation: translate 1.5s linear 0s infinite alternate;}
+     .cloud {
+      -webkit-animation-duration: 2s;
+      animation-duration: 2s;
+     }
+@-webkit-keyframes translate {
+  from{
+    transform: translate(1vw, 2vw);
+  }
+  to{
+    transform: translate(1vw,2.5vw);
+  }
+ }
+ @keyframes translate {
+  from{
+    transform: translate(1vw, 2vw);
+  }
+  to{
+    transform: translate(1vw,2.5vw);
+  }
+    }
+    .sun {    
+      position: absolute;
+      top: 40px; 
+      left: 1500px;
+      position: fixed;
+      -webkit-animation: rotate_sun 10s linear 0s infinite normal;
+      animation: rotate_sun 10s linear 0s infinite normal;
+    }
+     @-webkit-keyframes rotate_sun {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+ }
+ @keyframes rotate_sun {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+ }
+
+    .runner {position: absolute;
+      top: 30px;
+      left: 50px;
+    -webkit-animation: translate 3s linear 0s infinite alternate;
+  animation: translate 3s linear 0s infinite alternate;}
+@-webkit-keyframes translate {
+  from{
+    transform: translate(1vw, 2vw);
+  }
+  to{
+    transform: translate(1vw,4vw);
+  }
+ }
+ @keyframes translate {
+  from{
+    transform: translate(1vw, 2vw);
+  }
+  to{
+    transform: translate(1vw,4vw);
+  }
+ }
+ .quote_hot {
+    opacity: 0.0;
+    transition: opacity 1s;
+    position: absolute;
+    left: 1400px;
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 150%;
+ }
+ .quote_ses {
+    opacity: 0.0;
+    transition: opacity 1s;
+    position: absolute;
+    left: 2400px;
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 150%;
+ }
+ .quote_sh {
+    opacity: 0.0;
+    transition: opacity 1s;
+    position: absolute;
+    left: 3400px;
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 150%;
+ }
+  .quote_fts {
+    opacity: 0.0;
+    transition: opacity 1s;
+    position: absolute;
+    left: 4400px;
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 150%;
+ }
+ .quote_boa {
+    opacity: 0.0;
+    transition: opacity 1s;
+    position: absolute;
+    left: 5400px;
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 150%;
+ }
+ .quote_tvxq {
+    opacity: 0.0;
+    transition: opacity 1s;
+    position: absolute;
+    left: 6400px;
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 150%;
+ }
+  .quote_sj {
+    opacity: 0.0;
+    transition: opacity 1s;
+    position: absolute;
+    left: 7400px;
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 150%;
+ }
+ .quote_snsd {
+    opacity: 0.0;
+    transition: opacity 1s;
+    position: absolute;
+    left: 8400px;
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 150%;
+ }
+ .quote_shinee {
+    opacity: 0.0;
+    transition: opacity 1s;
+    position: absolute;
+    left: 9400px;
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 150%;
+ }
+  .quote_fx {
+    opacity: 0.0;
+    transition: opacity 1s;
+    position: absolute;
+    left: 10400px;
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 150%;
+ }
+ .quote_exo {
+    opacity: 0.0;
+    transition: opacity 1s;
+    position: absolute;
+    left: 11400px;
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 150%;
+ }
+ .quote_rv {
+    opacity: 0.0;
+    transition: opacity 1s;
+    position: absolute;
+    left: 12400px;
+    width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    line-height: 150%;
+ }
+ 
+  </style>
+</head>
+<body>
+<div class="total">
+<div class="person">
+<img src="leg.svg" alt="rightfoot" class="rightfoot legarm">
+<img src="leg.svg" alt="leftfoot" class="leftfoot legarm">
+<img src="arm2.svg" alt="rightarm" class="rightarm legarm">
+<img src="dukbody.svg" alt="head" class="head">
+<img src="arm.svg" alt="leftarm" class="leftarm legarm">
+</div>
+<img src="sun.svg" alt="sun" class="sun">
+<img src="runner.svg" alt="runner" class="runner">
+<img src="cloud.svg" alt="cloud" class="cloud">
+<img src="cloud2.svg" alt="cloud" class="cloud2">
+<img src="cloud.svg" alt="cloud" class="cloud3">
+<img src="cloud2.svg" alt="cloud" class="cloud4">
+<img src="cloud.svg" alt="cloud" class="cloud5">
+<img src="cloud2.svg" alt="cloud" class="cloud6">
+<img src="cloud.svg" alt="cloud" class="cloud7">
+<img src="HOT.png" alt="HOT" class="HOT">
+<img src="SES.png" alt="SES" class="SES">
+<img src="SH.png" alt="SH" class="SH">
+<img src="FTS.png" alt="FTS" class="FTS">
+<img src="boa.png" alt="boa" class="boa">
+<img src="TVXQ.png" alt="TVXQ" class="TVXQ">
+<img src="SJ.png" alt="SJ" class="SJ">
+<img src="SNSD.png" alt="SNSD" class="SNSD">
+<img src="SHINee.png" alt="SHINee" class="SHINee">
+<img src="Fx.png" alt="Fx" class="Fx">
+<img src="EXO.png" alt="EXO" class="EXO">
+<img src="RV.png" alt="RV" class="RV">
+<p class="quote_hot">
+H.O.T. 1996년 9월 7일 데뷔 2000년대 초까지 활동했던 대한민국의 남성 5인조 보이 댄스 그룹이다. 이후에 등장한 젝스키스, S.E.S., god, 핑클, 신화 등과 함께 한국 아이돌그룹의 전성기를 이끌었다. H.O.T.는 "High-five Of Teenagers". 곧 "십대들의 승리"를 의미한다. 대표곡으로는 데뷔곡인 〈전사의 후예〉를 포함해, 〈캔디〉, 〈늑대와 양〉, 〈행복〉, 〈we are the Future〉등이 있다.
+</p>
+<p class="quote_ses">
+S.E.S. 1997년 11월 ~ 2002년 12월 대한민국의 3인조 여성 아이돌 여성 그룹으로 S.E.S는 Sea, Eugene, Shoo의 약자이다. S.E.S.는 '이미지만 아니라 음악까지 인정할 수 있는 최초의 아이돌' 이라는 평가를 받고 있다. 또한, 섹시함을 강조하지 않고도 성숙함을 이끌어낸 〈Love〉와 재즈적인 사운드를 바탕으로 멤버들의 파트를 불규칙하게 전개, 팝 안에 재즈를 품은 〈Be Natural〉은 걸그룹 노래의 레전드 라는 평가를 받고 있다.
+</p>
+<p class="quote_sh">
+신화는 최장수 6인조 아이돌 그룹이다. 1998년 3월 24일 〈해결사〉로 데뷔. 대한민국 가요계 역사상 보이그룹중에 가장 정규앨범을 많이 발표한 그룹이다. 신화는 SM엔터테인먼트의 공개오디션을 통해 선발되었으며, 1집 《해결사》로 1998년 3월 24일 KMTV "쇼 뮤직탱크"를 통해 데뷔 무대를 가졌다. 그 후 1999년 4월 15일 발매한 2집 타이틀곡 《T.O.P》는 클래식 백조의 호수를 샘플링한 곡으로 가요 프로그램 1위를 석권하며 가요계에 자리매김하게 된다.
+</p>
+<p class="quote_fts">
+플라이 투 더 스카이(Fly to the Sky)는 남성 2인조이며, 대표곡으로는 Day by day, Sea of love, Missing you, 남자답게,가슴아파도 등이 있다. 멤버는 환희와 브라이언이다. 1999년 SM엔터테인먼트아래 데뷔했으나 2004년 계약이 끝나자 PFull엔터테인먼트로 소속사를 옮겼다. 1999년 데뷔 후 플라이 투 더 스카이는 여덟 장의 정규앨범을 냈다. 6집 《Transition》은 SM엔터테인먼트를 떠나서 PFull엔터테인먼트 아래 처음으로 낸 정규앨범이다.
+</p>
+<p class="quote_boa">
+BoA 2000년 8월 25일 한국 첫 정규 음반 ID; Peace B를 발매하며 데뷔했다. 한국에서 성공적으로 데뷔한 이후 2001년 일본 데뷔 싱글 "ID; Peace B"를 발매하며 일본에 진출했다. 일본 첫 정규 음반 Listen to My Heart는 한국 가수로 처음으로 오리콘 앨범차트 1위에 오르며 100만 장의 판매량을 기록해 밀리언 인증을 받았다. 2004년 발매한 두 번째 일본 정규 음반 Valenti와 일본 베스트 음반 Best Of Soul이 100만 장을 넘겼다. 한국에서도 No.1 (2002), Atlantis Princess (2003), My Name (2004), Girls On Top (2005)을 발매하였다.
+</p>
+<p class="quote_tvxq">
+동방신기는 남성 2인조 아이돌 그룹이다. 2003년 5인조 그룹으로 데뷔 당시 다섯 멤버였던 동방신기는 영웅재중, 유노윤호, 시아준수, 믹키유천, 최강창민 이라는 예명으로 활동 했었다. 이들 중 시아준수, 영웅재중, 믹키유천이 기존 소속사였던 SM엔터테인먼트에 소송을 제기하면서 탈퇴하였다. 유노윤호와 최강창민은 2010년 SMTOWN LIVE WORLD TOUR in Seoul에서의 첫 공식 무대 이후 2011년 2인조로 재편해 활동을 재개하였다.
+</p>
+<p class="quote_sj">
+슈퍼주니어 2005년 12월 5일 데뷔한 13인조남성 아이돌 그룹이다. 2010년부터 멤버 강인의 입대를 시작으로 로테이션 활동 방식을 채택하고 있으며, 현재 멤버 예성이 군 복무 중에 있다. 슈퍼주니어는 슈퍼주니어-M, 슈퍼주니어-HAPPY, 슈퍼주니어-K.R.Y, 슈퍼주니어-T 등의 유닛으로도 활동하고 있다. 아시아등지에서 활발히 활동 중이며 유럽, 남미등에서까지도 활동 영역을 넓히며 활동 중이다.
+</p>
+<p class="quote_snsd">
+소녀시대  8인조 걸 그룹으로, 소속사는 SM 엔터테인먼트이다. 소녀시대라는 이름은 소녀들이 평정할 시대가 왔다는 의미를 갖고 있다. 소녀시대는 2007년 8월 2일 데뷔 싱글 〈다시 만난 세계〉를 발매하고 8월 5일 SBS 《인기가요》를 통해 정식 데뷔했다. 같은 해 11월 1일 한국 첫 정규 앨범 《소녀시대》를 발매했으며, 〈Kissing You〉와 〈Baby Baby〉 등으로 활동하며 1위에 올랐다. 이후 2009년 1월 7일 첫 미니 앨범 Gee를 발매했다. 첫 미니 앨범 Gee는 큰 열풍을 불러일으켰다. 뮤직비디오를 공개한 지 하루 만에 조회수 100만 건을 기록하였으며, 음원 발매 2일 만에 엠넷, 멜론, 도시락 등 여러 음원차트에서 1위를 차지하였다.
+</p>
+<p class="quote_shinee">
+샤이니(SHINee)는 5인조 남성 음악 그룹이다. 샤이니라는 이름은 '빛'이라는 뜻의 명사 'Shiny'에 어미 'ee'를 조합하여 만든 것으로 '빛을 받는 사람'이라는 의미가 있다. 2008년 5월 25일 첫 번째 미니 앨범 《누난 너무 예뻐 (Replay)》를 발매해 데뷔하였고, 그해 8월 28일 정규 앨범《The SHINee World》를 발매해 첫 1위를 하였다. 독특한 샤이니만의 색으로 소녀 팬들의 마음을 사로 잡았다. 데뷔 이후 독특한 컨셉의 활동들로 대중들의 눈길을 사로 잡으며 현재까지도 많은 사랑을 받고 있는 가수이다.
+</p>
+<p class="quote_fx">
+에프엑스(f(x))는 여성 5인조 댄스 팝 음악 그룹으로, 빅토리아, 엠버, 루나, 설리, 크리스탈로 이루어진 다국적그룹이다. f(x)는 수학의 함수식으로, x의 값에 따라 결과가 변하는 수식처럼 멤버들의 다양한 재능과 매력을 바탕으로 다채로운 활동을 펼치겠다는 의미이다. 또한 "f"는 flower를, "x"는 여성 염색체 XX의 X를 따와 '여성을 연상케 하는 꽃'을 상징하고 있다. 2009년 9월 5일 디지털 싱글 〈라차타 (LA chA TA)〉로 데뷔하였으며, 2010년 5월 3일에는 첫 EP 음반 《NU 예삐오》를 발매하였는데 특이한 일렉트로 사운드로 비평가들로부터 긍정적인 평가를 받았고, 2011년 4월 20일에는 첫 정규 음반 《피노키오》를 발매하고 활동하며 처음으로 1위에 오르는 등 큰 상업적 성과를 얻었다.
+</p>
+<p class="quote_exo">
+EXO (엑소)는 10인조 다국적 남성 음악 그룹이다. EXO는 태양계 외행성을 뜻하는 'exoplanet'에서 모티브를 얻은 이름으로, '미지의 세계에서 온 새로운 스타'라는 의미가 담겨 있다. EXO의 구성원 10명은 각각 대한민국에서 활동하는 EXO-K와 중국에서 활동하는 EXO-M으로 각각 여섯명, 네 명씩 나누어져 있고, 두 팀의 개별적 활동을 기초로 하며 예외적으로 열명이 같이 활동하기도 한다. EXO의 데뷔 싱글, "MAMA"는 2012년 4월에 발매 되었고 EXO-M의 버전은 출시 하루만에 중국의 음악 차트 정상을 차지했고, EXO-K의 "MAMA"뮤직 비디오는 유튜브의 글로벌 차트에서 7위를 기록했다. 2012년 데뷔 EP "MAMA"와 2013년 정규 앨범 "XOXO"는 전 세계적으로 총 150만장의 판매량을 기록, 상업적으로 크게 성공했다. EXO는 또한, "XOXO"로 데뷔 이후 단기간에 엠넷 아시안 뮤직 어워드에서 올해의 앨범상을 수상했다.
+</p>
+<p class="quote_rv">
+레드벨벳 (Red Velvet)은 4인조 여성 음악 그룹이다. 소속사는 팀명은 "강렬하고 매혹적인 컬러 (Red)와 여성스럽고 부드러운 느낌의 (Velvet)에서 연상되는 감각적인 이미지처럼, 색깔 있고 세련된 음악과 퍼포먼스로 선보이겠다"는 팀의 포부를 담고 있다. 구성원은 아이린, 슬기, 웬디, 조이로 이루어져 있다. 2014년 8월 디지털 싱글 〈행복 (Happiness)〉로 데뷔하였다. 같은 해 10월에는 디지털 싱글 〈Be Natural〉을 발매했다.
+</p>
+</div>
+</body>
+</html>
