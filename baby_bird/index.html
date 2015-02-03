@@ -9,13 +9,42 @@
 <script>
 $(function() {
   $(document).on('mousedown touchstart', function() {
-     $('.bird').addClass('up');
-     $('.bird').removeClass('down');
+    if($('body').hasClass('gg')) {
+      // body에서 gg제거하고
+      // pos를 50으로 수장
+      $('body').removeClass('gg');
+      pos = 50;
+    } else {
+      $('.bird').addClass('up');
+      $('.bird').removeClass('down');
+    }
   });
   $(document).on('mouseup touchend', function() {
-     $('.bird').addClass('down');
-     $('.bird').removeClass('up');
+    if($('body').hasClass('gg')) {
+    } else {
+      $('.bird').addClass('down');
+      $('.bird').removeClass('up');
+    }
   });
+
+  var pos = 50;
+
+  function update() {
+    if($('.bird').hasClass('up')) {
+      pos = pos - 1;
+    } else {
+      pos = pos + 1;
+    }
+    $('.bird').css('top', pos + '%');
+
+    if(pos === 0 || pos === 100) {
+      $('body').addClass('gg');
+    }
+    
+    requestAnimationFrame(update);
+  }
+
+  requestAnimationFrame(update);
 });
 
 
@@ -24,10 +53,10 @@ $(function() {
 .bird {
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 40%;
   background-color: red;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
 }
 .bird.down {
   transform: rotate(15deg);
@@ -35,8 +64,19 @@ $(function() {
 .bird.up {
   transform: rotate(-15deg);
 }
+
+body > .gameover {
+  position: fixed;
+  top:50%;
+  left:50%;
+  display: none;
+}
+body.gg > .gameover {
+  display: block;
+}
 </style>
 <body>
   <div class="bird down"></div>
+  <div class="gameover">GAME OVER</div>
 </body>
 </html>
