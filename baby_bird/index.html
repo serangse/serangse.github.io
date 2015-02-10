@@ -11,7 +11,7 @@ $(function() {
   $(document).on('mousedown touchstart', function() {
     if($('body').hasClass('gg')) {
       // body에서 gg제거하고
-      // pos를 50으로 수장
+      // pos를 50으로 수정
       $('body').removeClass('gg');
       pos = 50;
     } else {
@@ -54,15 +54,18 @@ $(function() {
   position: fixed;
   top: 50%;
   left: 40%;
-  background-color: red;
   width: 100px;
   height: 100px;
+  background-image: url(img/js.png);
+  background-repeat: no-repeat;
 }
 .bird.down {
-  transform: rotate(15deg);
+  transform: rotate(20deg);
+  transition: transform 1s;
 }
 .bird.up {
-  transform: rotate(-15deg);
+  transform: rotate(-20deg);
+  transition: transform 1s;
 }
 
 body > .gameover {
@@ -72,6 +75,7 @@ body > .gameover {
   display: none;
 }
 body.gg > .gameover {
+  font-size: 10em;
   display: block;
 }
 </style>
