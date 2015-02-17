@@ -15,6 +15,7 @@ $(function() {
   var last_char_move = new Date();
   var last_obs = new Date();
   var last_obs_move = new Date();
+  var start_date = new Date();
   var $bird = $('.bird');
   var $body = $('body');
 
@@ -27,6 +28,7 @@ $(function() {
       pos = 50;
       obsDelay = 1000;
       speed = 0.008;
+      start_date = new Date();
     } else {
       $bird.addClass('up');
       $bird.removeClass('down');
@@ -62,6 +64,9 @@ $(function() {
       last_char_move = cur_date;
     }
     
+    // 점수 갱신
+    $('.score').text(parseInt((cur_date - start_date) / 100));
+
     // 장애물 추가
     if(cur_date - last_obs > obsDelay) {
       var types = ['moon', 'cloud', 'flower' , 'planet' , 'planet2'];
@@ -190,9 +195,17 @@ body.gg > .gameover {
   height: 10vw;
   background-image: url(img/planet.png);
 }
+.score {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 3em;
+  color: white;
+}
 </style>
 <body>
   <div class="bird down"></div>
   <div class="gameover">GAME OVER</div>
+  <div class="score">0</div>
 </body>
 </html>
