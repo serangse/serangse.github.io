@@ -9,56 +9,66 @@
 <script src="jquery-2.1.3.min.js"></script>
 <script>
 $(function() {
-  $(document).on('mousedown touchstart', function() {
-    if($('body').hasClass('gg')) {
-      // body에서 gg제거하고
-      // pos를 50으로 수정
-      $('body').removeClass('gg');
-      pos = 50;
-    } else {
-      $('.bird').addClass('up');
-      $('.bird').removeClass('down');
-    }
-  });
-  $(document).on('mouseup touchend', function() {
-    if($('body').hasClass('gg')) {
-    } else {
-      $('.bird').addClass('down');
-      $('.bird').removeClass('up');
-    }
-  });
-
   var pos = 50;
+  var obsDelay = 1000;
+  var speed = 0.008;
   var last_char_move = new Date();
   var last_obs = new Date();
   var last_obs_move = new Date();
+  var $bird = $('.bird');
+  var $body = $('body');
+
+  $(document).on('mousedown touchstart', function() {
+    if($body.hasClass('gg')) {
+      // body에서 gg제거하고
+      // pos를 50으로 수정
+      $body.removeClass('gg');
+      $('.obstacle').remove();
+      pos = 50;
+      obsDelay = 1000;
+      speed = 0.008;
+    } else {
+      $bird.addClass('up');
+      $bird.removeClass('down');
+    }
+  });
+  $(document).on('mouseup touchend', function() {
+    if($body.hasClass('gg')) {
+    } else {
+      $bird.addClass('down');
+      $bird.removeClass('up');
+    }
+  });
 
   function update() {
     requestAnimationFrame(update);
+    if($body.hasClass('gg')) return;
+
     var cur_date = new Date();
 
     // 캐릭터 이동
     if(cur_date - last_char_move > 10) {
-      if($('.bird').hasClass('up')) {
+      if($bird.hasClass('up')) {
         pos = pos - 1;
       } else {
         pos = pos + 1;
       }
-      $('.bird').css('top', pos + '%');
+      $bird.css('top', pos + '%');
 
+      // 화면 경계에 닿으면 종료
       if(pos === 0 || pos === 100) {
-        $('body').addClass('gg');
+        $body.addClass('gg');
       }
       last_char_move = cur_date;
     }
     
     // 장애물 추가
-    if(cur_date - last_obs > 3000) {
+    if(cur_date - last_obs > obsDelay) {
       var types = ['moon', 'cloud', 'flower' , 'planet' , 'planet2'];
       var index = Math.floor(Math.random() * types.length);
       
       var obs = $('<div class="obstacle ' + types[index] + '"></div>');
-      $('body').append(obs);
+      $body.append(obs);
       obs.css('left', '100%');
       obs.css('top', (Math.random() * 100) + '%');
 
@@ -67,14 +77,35 @@ $(function() {
 
     // 장애물 이동
     var cur_date = new Date();
+    var windowWidth = $(window).width();
     if(cur_date - last_obs_move > 10) {
-      $('.obstacle').each(function(i, element) {
-        var left = parseInt($(element).css('left'));
-        left = left - 7;
-        $(element).css('left', left);
+      var charx = $bird.offset().left;
+      var chary = $bird.offset().top;
+      var charr = $bird.width() * 0.5;
 
-        if(left < -60) {
+      $('.obstacle').each(function(i, element) {
+        var $element = $(element);
+        var left = parseInt($element.css('left'));
+        var percent = left /  windowWidth;
+        percent = percent - speed;
+
+        $(element).css('left', (percent * windowWidth) + 'px');
+
+        if(left < 0) {
+          // 사라진 애들 제거
           $(element).remove();
+          obsDelay = obsDelay * 0.99;
+          speed = speed * 1.01;
+        } else {
+          // 충돌 검사
+          var obsOffset = $element.offset();
+          var obsx = obsOffset.left;
+          var obsy = obsOffset.top;
+          var obsr = $element.width() * 0.5;
+          var distance = Math.pow(Math.pow(obsx - charx, 2) + Math.pow(obsy - chary, 2), 0.5);
+          if(distance < (obsr + charr) * 0.9) {
+            $body.addClass('gg');
+          }
         }
       });
       last_obs_move = cur_date;
@@ -84,27 +115,29 @@ $(function() {
   requestAnimationFrame(update);
 });
 
-
 </script>
 <style>
 .bird {
   position: fixed;
   top: 50%;
   left: 40%;
-  width: 150px;
-  height: 150px;
+  width: 10vw;
+  height: 10vw;
   background-image: url(img/js.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .bird.down {
-  transform: rotate(20deg);
-  transition: transform 1s;
+  transform: rotate(10deg);
 }
 .bird.up {
-  transform: rotate(-20deg);
-  transition: transform 1s;
+  transform: rotate(-10deg);
 }
+.gg .bird.up,
+.gg .bird.down {
+  transform: rotate(180deg);
+}
+
 html {
   height: 100%;
 }
@@ -120,10 +153,11 @@ body > .gameover {
   display: none;
 }
 body.gg > .gameover {
-  font-size: 5em;
+  font-size: 5vw;
   display: block;
   color: #ffffff;
   font-family: 'Josefin Sans', sans-serif;
+  z-index: 1;
 }
 .obstacle {
   background-repeat: no-repeat;
@@ -131,32 +165,31 @@ body.gg > .gameover {
   position: absolute;
 }
 .obstacle.moon {
-  width: 300px;
-  height: 300px;
+  width: 10vw;
+  height: 10vw;
   background-image: url(img/moon.svg);
 }
 .obstacle.cloud {
-  width: 200px;
-  height: 200px;
+  width: 15vw;
+  height: 15vw;
   background-image: url(img/cloud.svg);
 
 }
 .obstacle.flower {
-  width: 150px;
-  height: 150px;
+  width: 10vw;
+  height: 10vw;
   background-image: url(img/flower.svg);
 }
 .obstacle.planet2 {
-  width: 150px;
-  height: 150px;
+  width: 10vw;
+  height: 10vw;
   background-image: url(img/planet2.svg);
 }
 .obstacle.planet {
-  width: 150px;
-  height: 150px;
+  width: 10vw;
+  height: 10vw;
   background-image: url(img/planet.svg);
 }
-
 </style>
 <body>
   <div class="bird down"></div>
