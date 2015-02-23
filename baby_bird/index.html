@@ -69,7 +69,7 @@ $(function() {
 
     // 장애물 추가
     if(cur_date - last_obs > obsDelay) {
-      var types = ['moon', 'cloud', 'flower' , 'planet' , 'planet2' 'ufo'];
+      var types = ['moon', 'cloud', 'flower' , 'planet' , 'planet2'];
       var index = Math.floor(Math.random() * types.length);
       
       var obs = $('<div class="obstacle ' + types[index] + '"></div>');
