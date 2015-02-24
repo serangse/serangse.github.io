@@ -16,8 +16,10 @@ $(function() {
   var last_obs = new Date();
   var last_obs_move = new Date();
   var start_date = new Date();
+  var heart_score = 0;
   var $bird = $('.bird');
   var $body = $('body');
+  var $score = $('.score');
 
   $(document).on('mousedown touchstart', function() {
     if($body.hasClass('gg')) {
@@ -28,6 +30,7 @@ $(function() {
       pos = 50;
       obsDelay = 1000;
       speed = 0.008;
+      heart_score = 0;
       start_date = new Date();
     } else {
       $bird.addClass('up');
@@ -65,11 +68,15 @@ $(function() {
     }
     
     // 점수 갱신
-    $('.score').text(parseInt((cur_date - start_date) / 100));
+    $score.text(parseInt((cur_date - start_date) / 100) + heart_score);
 
     // 장애물 추가
+    var types = ['moon', 'cloud', 'flower' , 'planet' , 'planet2', 'heart' , 'serang'];
+    if(cur_date - start_date > 7 * 1000) {
+      types.push('ufo');
+    }
+
     if(cur_date - last_obs > obsDelay) {
-      var types = ['moon', 'cloud', 'flower' , 'planet' , 'planet2' , 'ufo'];
       var index = Math.floor(Math.random() * types.length);
       
       var obs = $('<div class="obstacle ' + types[index] + '"></div>');
@@ -108,8 +115,22 @@ $(function() {
           var obsy = obsOffset.top;
           var obsr = $element.width() * 0.5;
           var distance = Math.pow(Math.pow(obsx - charx, 2) + Math.pow(obsy - chary, 2), 0.5);
-          if(distance < (obsr + charr) * 0.85) {
-            $body.addClass('gg');
+          if(distance < (obsr + charr) * 0.8) {
+            if ($element.hasClass('heart') || $element.hasClass('serang')) {
+              if($element.hasClass('heart')) {
+                heart_score = heart_score + 30;
+              }
+              if($element.hasClass('serang')) {
+                heart_score = heart_score + 60;
+              }
+              $element.remove();
+              $score.addClass('highlight');
+              window.setTimeout(function() {
+                $score.removeClass('highlight');
+            }, 1000);
+            } else {
+              $body.addClass('gg');
+            }
           }
         }
       });
@@ -122,6 +143,14 @@ $(function() {
 
 </script>
 <style>
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 .bird {
   position: fixed;
   top: 50%;
@@ -150,6 +179,7 @@ body {
   background-image: linear-gradient( to bottom, #000000, #00225e );
   height: 100%;
   overflow: hidden;
+  font-family: 'Josefin Sans', sans-serif;
 }
 body > .gameover {
   position: fixed;
@@ -161,7 +191,6 @@ body.gg > .gameover {
   font-size: 5vw;
   display: block;
   color: #ffffff;
-  font-family: 'Josefin Sans', sans-serif;
   z-index: 1;
 }
 .obstacle {
@@ -196,9 +225,19 @@ body.gg > .gameover {
   background-image: url(img/planet.png);
 }
 .obstacle.ufo {
-  width: 11vw;
-  height: 11vw;
+  width: 14vw;
+  height: 14vw;
   background-image: url(img/ufo.png);
+}
+.obstacle.heart {
+  width: 9vw;
+  height: 9vw;
+  background-image: url(img/heart.png);
+}
+.obstacle.serang {
+  width: 9vw;
+  height: 9vw;
+  background-image: url(img/serang.png);
 }
 .score {
   position: absolute;
@@ -207,6 +246,11 @@ body.gg > .gameover {
   font-size: 3em;
   color: white;
 }
+.highlight {
+  color: #ff5555;
+  font-size: 5em;
+}
+
 </style>
 <body>
   <div class="bird down"></div>
