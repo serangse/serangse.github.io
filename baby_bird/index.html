@@ -104,7 +104,8 @@ $(function() {
     $highscore.text(high_score);
 
     if(cur_score > high_score) {
-      createCookie('highscore', cur_score);
+      high_score = cur_score;
+      createCookie('highscore', high_score);
     }
 
     // 장애물 추가
