@@ -4,10 +4,38 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
   <title>Baby Bird</title>
-<link href="http://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
 </head>
 <script src="jquery-2.1.3.min.js"></script>
 <script>
+var createCookie = function(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
+}
 // 베이비버드게임
 $(function() {
   var pos = 50;
@@ -21,26 +49,27 @@ $(function() {
   var $bird = $('.bird');
   var $body = $('body');
   var $score = $('.score');
+  var $highscore = $('.highscore');
+  var high_score = +getCookie('highscore') || 0;
 
   $(document).on('mousedown touchstart', function() {
     if($body.hasClass('gg')) {
-      // body에서 gg제거하고
-      // pos를 50으로 수정
       $body.removeClass('gg');
+    } else if($body.hasClass('playing')) {
+      $bird.addClass('up');
+      $bird.removeClass('down');
+    } else {
+      $body.addClass('playing');
       $('.obstacle').remove();
       pos = 50;
       obsDelay = 1000;
       speed = 0.008;
       heart_score = 0;
       start_date = new Date();
-    } else {
-      $bird.addClass('up');
-      $bird.removeClass('down');
     }
   });
   $(document).on('mouseup touchend', function() {
-    if($body.hasClass('gg')) {
-    } else {
+    if($body.hasClass('playing')) {
       $bird.addClass('down');
       $bird.removeClass('up');
     }
@@ -48,7 +77,7 @@ $(function() {
 
   function update() {
     requestAnimationFrame(update);
-    if($body.hasClass('gg')) return;
+    if(!$body.hasClass('playing')) return;
 
     var cur_date = new Date();
 
@@ -64,12 +93,19 @@ $(function() {
       // 화면 경계에 닿으면 종료
       if(pos === 0 || pos === 100) {
         $body.addClass('gg');
+        $body.removeClass('playing');
       }
       last_char_move = cur_date;
     }
     
     // 점수 갱신
-    $score.text(parseInt((cur_date - start_date) / 100) + heart_score);
+    var cur_score = parseInt((cur_date - start_date) / 100) + heart_score;
+    $score.text(cur_score);
+    $highscore.text(high_score);
+
+    if(cur_score > high_score) {
+      createCookie('highscore', cur_score);
+    }
 
     // 장애물 추가
     var types = ['moon', 'cloud', 'flower' , 'planet' , 'planet2', 'heart' , 'serang'];
@@ -131,6 +167,7 @@ $(function() {
             }, 1000);
             } else {
               $body.addClass('gg');
+              $body.removeClass('playing');
             }
           }
         }
@@ -180,7 +217,8 @@ body {
   background-image: linear-gradient( to bottom, #000000, #00225e );
   height: 100%;
   overflow: hidden;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Chewy', cursive;
+  letter-spacing: 0.5vw;
 }
 body > .gameover {
   position: fixed;
@@ -244,18 +282,51 @@ body.gg > .gameover {
   position: absolute;
   left: 10px;
   top: 10px;
-  font-size: 3em;
+  font-size: 3vw;
+  color: white;
+}
+.highscore {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 3vw;
   color: white;
 }
 .highlight {
   color: #ff5555;
-  font-size: 5em;
+  font-size: 5vw;
+}
+.intro {
+  position: absolute;
+  background-image: linear-gradient( to bottom, #000000, #00225e );
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+body.gg .intro,
+body.playing .intro {
+  display: none;
 }
 
+.title {
+  font-size: 10vw;
+  color: white;
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: 0.7vw;
+}
 </style>
 <body>
+    <div class="intro">
+    <span class="title">Baby Bird</span>
+  </div>
   <div class="bird down"></div>
   <div class="gameover">GAME OVER</div>
   <div class="score">0</div>
+  <div class="highscore">0</div>
 </body>
 </html>
