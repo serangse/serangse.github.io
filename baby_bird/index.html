@@ -101,12 +101,12 @@ $(function() {
     // 점수 갱신
     var cur_score = parseInt((cur_date - start_date) / 100) + heart_score;
     $score.text(cur_score);
-    $highscore.text(high_score);
 
     if(cur_score > high_score) {
       high_score = cur_score;
       createCookie('highscore', high_score);
     }
+    $highscore.text(high_score);
 
     // 장애물 추가
     var types = ['moon', 'cloud', 'flower' , 'planet' , 'planet2', 'heart' , 'serang'];
