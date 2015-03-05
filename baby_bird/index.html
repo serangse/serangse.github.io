@@ -61,7 +61,6 @@ $(function() {
     } else {
       $body.addClass('playing');
       $('.obstacle').remove();
-      $('#bgm')[0].play();
       pos = 50;
       obsDelay = 1000;
       speed = 0.008;
@@ -95,8 +94,6 @@ $(function() {
       if(pos === 0 || pos === 100) {
         $body.addClass('gg');
         $body.removeClass('playing');
-        $('#bgm')[0].pause();
-        $('#bgm')[0].currentTime = 0;
       }
       last_char_move = cur_date;
     }
@@ -174,8 +171,6 @@ $(function() {
             } else {
               $body.addClass('gg');
               $body.removeClass('playing');
-              $('#bgm')[0].pause();
-              $('#bgm')[0].currentTime = 0;
               //다음줄에 소리넣기
             }
           }
