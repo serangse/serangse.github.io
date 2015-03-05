@@ -3,6 +3,16 @@
 	<head>
 		<meta charset="utf-8">
 		<title>test</title>
+		<script src="jquery-2.1.3.min.js"></script>
+		<script>
+		$(function() {
+			$('#bgm')[0].play();
+			window.setInterval(function() {
+				$('#fx1')[0].play();
+			}, 3000);
+		});
+		</script>
+
 	</head>
 	<body>
 		<audio id="fx1" controls>
