@@ -231,11 +231,15 @@ body > .gameover {
   display: none;
 }
 body.gg > .gameover {
-  font-size: 5vw;
   display: block;
-  color: #ffffff;
-  z-index: 1;
+  font-size: 10vw;
+  color: white;
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  letter-spacing: 0.7vw;
 }
+
 .obstacle {
   background-repeat: no-repeat;
   background-size: cover;
@@ -335,6 +339,7 @@ button {
   border-radius:8px;
   cursor:pointer;
   text-shadow:0px 1px 0px #3d768a;
+  margin: 1.8vw;
 }
 #fx1 {
   display: none;
@@ -347,6 +352,7 @@ button {
   </div>
   <div class="bird down"></div>
   <div class="gameover">GAME OVER
+    <button type="button">reply</button>
   </div>
   <div class="score">0</div>
   <div class="highscore">0</div>
