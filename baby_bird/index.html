@@ -221,7 +221,6 @@ body {
   background-image: linear-gradient( to bottom, #000000, #00225e );
   height: 100%;
   overflow: hidden;
-  font-family: 'Chewy', cursive;
   letter-spacing: 0.5vw;
 }
 body > .gameover {
@@ -237,7 +236,9 @@ body.gg > .gameover {
   position: absolute;
   top: 30%;
   left: 20%;
+  font-family: 'Chewy', cursive;
   letter-spacing: 0.7vw;
+  z-index: 1;
 }
 
 .obstacle {
@@ -292,6 +293,7 @@ body.gg > .gameover {
   top: 10px;
   font-size: 3vw;
   color: white;
+  font-family: 'Chewy', cursive;
 }
 .highscore {
   position: absolute;
@@ -299,6 +301,7 @@ body.gg > .gameover {
   top: 10px;
   font-size: 3vw;
   color: white;
+font-family: 'Luckiest Guy', cursive;
 }
 .highlight {
   color: #ff5555;
@@ -331,15 +334,20 @@ button {
   font-size: 6vw;
   color: white;
   position: absolute;
-  top: 50%;
-  left: 60%;
   font-family: 'Luckiest Guy', cursive;
   box-shadow: 0px 10px 14px -7px #276873;
   background-color:#599bb3;
   border-radius:8px;
   cursor:pointer;
   text-shadow:0px 1px 0px #3d768a;
-  margin: 1.8vw;
+}
+button.start {
+  top: 50%;
+  left: 60%;
+}
+button.replay {
+  top: 50%;
+  left: 60%;
 }
 #fx1 {
   display: none;
@@ -348,11 +356,11 @@ button {
 <body>
     <div class="intro">
     <span class="title">Baby Bird!♥</span>
-    <button type="button">START</button>
+    <button type="button" class="start">START</button>
   </div>
   <div class="bird down"></div>
-  <div class="gameover">GAME OVER
-    <button type="button">reply</button>
+  <div class="gameover"><span>GAME OVER</span>
+    <button type="button" class="replay">replay</button>
   </div>
   <div class="score">0</div>
   <div class="highscore">0</div>
