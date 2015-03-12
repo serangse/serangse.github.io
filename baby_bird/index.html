@@ -45,7 +45,9 @@ $(function() {
   var soundJump = new Howl({
     urls: ['sound/jumping.ogg']
   });
-
+    var soundHeart = new Howl({
+    urls: ['sound/heart.ogg']
+  });
   var pos = 50;
   var obsDelay = 1000;
   var speed = 0.008;
@@ -62,7 +64,7 @@ $(function() {
 
   $(document).on('mousedown touchstart', function(e) {
     e.preventDefault();
-    
+
     if($body.hasClass('gg')) {
       $body.removeClass('gg');
     } else if($body.hasClass('playing')) {
@@ -175,7 +177,7 @@ $(function() {
               }
               $element.remove();
               $score.addClass('highlight');
-              $('#fx1')[0].play();
+              soundHeart.play();
 
               window.setTimeout(function() {
                 $score.removeClass('highlight');
@@ -361,9 +363,6 @@ button.replay {
   top: 50%;
   left: 60%;
 }
-#fx1 {
-  display: none;
-}
 </style>
 <body>
     <div class="intro">
@@ -376,8 +375,5 @@ button.replay {
   </div>
   <div class="score">0</div>
   <div class="highscore">0</div>
-  <audio id="fx1">
-    <source src="sound/f124.mp3" type="audio/mpeg">
-  </audio>
 </body>
 </html>
