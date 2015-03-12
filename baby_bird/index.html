@@ -42,6 +42,9 @@ $(function() {
   var soundLose = new Howl({
     urls: ['sound/lose1.ogg']
   });
+  var soundJump = new Howl({
+    urls: ['sound/jump.ogg']
+  });
 
   var pos = 50;
   var obsDelay = 1000;
@@ -94,6 +97,7 @@ $(function() {
         pos = pos + 1;
       }
       $bird.css('top', pos + '%');
+      soundJump.play();
 
       // 화면 경계에 닿으면 종료
       if(pos === 0 || pos === 100) {
