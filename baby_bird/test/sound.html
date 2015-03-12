@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sound test</title>
+  <script src="howler.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+  <script>
+  $(function() {
+    var sound = new Howl({
+      urls: ['sounds.mp3', 'sounds.ogg'],
+      sprite: {
+        blast: [0, 2000],
+        laser: [3000, 700],
+        winner: [5000, 9000]
+      }
+    });
+
+    $('#button1').on('click', function() {
+      sound.play('blast');
+    });
+    $('#button2').on('click', function() {
+      sound.play('laser');
+    });
+    $('#button3').on('click', function() {
+      sound.play('winner');
+    });
+  });
+  </script>
+</head>
+<body>
+  <a id="button1" href="#">Play 1</a>
+  <a id="button2" href="#">Play 2</a>
+  <a id="button3" href="#">Play 3</a>
+</body>
+</html>
