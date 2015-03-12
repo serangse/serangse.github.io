@@ -60,7 +60,9 @@ $(function() {
   var $highscore = $('.highscore');
   var high_score = +getCookie('highscore') || 0;
 
-  $(document).on('mousedown touchstart', function() {
+  $(document).on('mousedown touchstart', function(e) {
+    e.preventDefault();
+    
     if($body.hasClass('gg')) {
       $body.removeClass('gg');
     } else if($body.hasClass('playing')) {
