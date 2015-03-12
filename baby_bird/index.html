@@ -66,6 +66,7 @@ $(function() {
     } else if($body.hasClass('playing')) {
       $bird.addClass('up');
       $bird.removeClass('down');
+      soundJump.play();
     } else {
       $body.addClass('playing');
       $('.obstacle').remove();
@@ -97,7 +98,6 @@ $(function() {
         pos = pos + 1;
       }
       $bird.css('top', pos + '%');
-      soundJump.play();
 
       // 화면 경계에 닿으면 종료
       if(pos === 0 || pos === 100) {
