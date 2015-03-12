@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <title>Baby Bird</title>
+<link href='http://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
+</head>
+<script src="jquery-2.1.3.min.js"></script>
+<script src="howler.js"></script>
+<script>
+var createCookie = function(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(c_name) {
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
+}
+// 베이비버드게임
+$(function() {
+  var soundLose = new Howl({
+    urls: ['sound/lose1.ogg']
+  });
+  var soundJump = new Howl({
+    urls: ['sound/jumping.ogg']
+  });
+    var soundHeart = new Howl({
+    urls: ['sound/heart.ogg']
+  });
+  var pos = 50;
+  var obsDelay = 1000;
+  var speed = 0.008;
+  var last_char_move = new Date();
+  var last_obs = new Date();
+  var last_obs_move = new Date();
+  var start_date = new Date();
+  var heart_score = 0;
+  var $bird = $('.bird');
+  var $body = $('body');
+  var $score = $('.score');
+  var $highscore = $('.highscore');
+  var high_score = +getCookie('highscore') || 0;
+
+  $(document).on('mousedown touchstart', function(e) {
+    e.preventDefault();
+
+    if($body.hasClass('gg')) {
+      $body.removeClass('gg');
+    } else if($body.hasClass('playing')) {
+      $bird.addClass('up');
+      $bird.removeClass('down');
+      soundJump.play();
+    } else {
+      $body.addClass('playing');
+      $('.obstacle').remove();
+      pos = 50;
+      obsDelay = 1000;
+      speed = 0.008;
+      heart_score = 0;
+      start_date = new Date();
+    }
+  });
+  $(document).on('mouseup touchend', function() {
+    if($body.hasClass('playing')) {
+      $bird.addClass('down');
+      $bird.removeClass('up');
+    }
+  });
+
+  function update() {
+    requestAnimationFrame(update);
+    if(!$body.hasClass('playing')) return;
+
+    var cur_date = new Date();
+
+    // 캐릭터 이동
+    if(cur_date - last_char_move > 10) {
+      if($bird.hasClass('up')) {
+        pos = pos - 1;
+      } else {
+        pos = pos + 1;
+      }
+      $bird.css('top', pos + '%');
+
+      // 화면 경계에 닿으면 종료
+      if(pos === 0 || pos === 100) {
+        $body.addClass('gg');
+        $body.removeClass('playing');
+        soundLose.play();
+      }
+      last_char_move = cur_date;
+    }
+    
+    // 점수 갱신
+    var cur_score = parseInt((cur_date - start_date) / 100) + heart_score;
+    $score.text(cur_score);
+
+    if(cur_score > high_score) {
+      high_score = cur_score;
+      createCookie('highscore', high_score);
+    }
+    $highscore.text(high_score);
+
+    // 장애물 추가
+    var types = ['moon', 'cloud', 'flower' , 'planet' , 'planet2', 'heart' , 'serang'];
+    if(cur_date - start_date > 7 * 1000) {
+      types.push('ufo');
+    }
+
+    if(cur_date - last_obs > obsDelay) {
+      var index = Math.floor(Math.random() * types.length);
+      
+      var obs = $('<div class="obstacle ' + types[index] + '"></div>');
+      $body.append(obs);
+      obs.css('left', '100%');
+      obs.css('top', (Math.random() * 100) + '%');
+
+      last_obs = cur_date;
+    }
+
+    // 장애물 이동
+    var cur_date = new Date();
+    var windowWidth = $(window).width();
+    if(cur_date - last_obs_move > 10) {
+      var charx = $bird.offset().left;
+      var chary = $bird.offset().top;
+      var charr = $bird.width() * 0.5;
+
+      $('.obstacle').each(function(i, element) {
+        var $element = $(element);
+        var left = parseInt($element.css('left'));
+        var percent = left /  windowWidth;
+        percent = percent - speed;
+
+        $(element).css('left', (percent * windowWidth) + 'px');
+
+        if(left < 0) {
+          // 사라진 애들 제거
+          $(element).remove();
+          obsDelay = obsDelay * 0.99;
+          speed = speed * 1.01;
+        } else {
+          // 충돌 검사
+          var obsOffset = $element.offset();
+          var obsx = obsOffset.left;
+          var obsy = obsOffset.top;
+          var obsr = $element.width() * 0.5;
+          var distance = Math.pow(Math.pow(obsx - charx, 2) + Math.pow(obsy - chary, 2), 0.5);
+          if(distance < (obsr + charr) * 0.8) {
+            if ($element.hasClass('heart') || $element.hasClass('serang')) {
+              if($element.hasClass('heart')) {
+                heart_score = heart_score + 30;
+              }
+              if($element.hasClass('serang')) {
+                heart_score = heart_score + 60;
+              }
+              $element.remove();
+              $score.addClass('highlight');
+              soundHeart.play();
+
+              window.setTimeout(function() {
+                $score.removeClass('highlight');
+              }, 1000);
+            } else {
+              $body.addClass('gg');
+              $body.removeClass('playing');
+              soundLose.play();
+            }
+          }
+        }
+      });
+      last_obs_move = cur_date;
+    }
+  }
+
+  requestAnimationFrame(update);
+});
+
+</script>
+<style>
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.bird {
+  position: fixed;
+  top: 50%;
+  left: 40%;
+  width: 14vw;
+  height: 14vw;
+  background-image: url(img/js.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bird.down {
+  transform: rotate(10deg);
+}
+.bird.up {
+  transform: rotate(-10deg);
+}
+.gg .bird.up,
+.gg .bird.down {
+  transform: rotate(180deg);
+}
+
+html {
+  height: 100%;
+}
+body {
+  background-image: linear-gradient( to bottom, #000000, #00225e );
+  height: 100%;
+  overflow: hidden;
+  letter-spacing: 0.5vw;
+}
+body > .intro,
+body > .gameover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+body > .intro {
+  background-image: linear-gradient( to bottom, #000000, #00225e );
+}
+
+body > .gameover {
+  display: none;
+}
+body.gg .intro,
+body.playing .intro {
+  display: none;
+}
+body.gg > .gameover {
+  display: block;
+}
+
+.title {
+  font-size: 10vw;
+  color: white;
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  letter-spacing: 0.7vw;
+}
+.intro .title {
+  font-family: 'Luckiest Guy', cursive;
+}
+.gameover .title {
+  font-family: 'Chewy', cursive;
+}
+
+.obstacle {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+.obstacle.moon {
+  width: 10vw;
+  height: 10vw;
+  background-image: url(img/moon.png);
+}
+.obstacle.cloud {
+  width: 15vw;
+  height: 15vw;
+  background-image: url(img/cloud.png);
+
+}
+.obstacle.flower {
+  width: 10vw;
+  height: 10vw;
+  background-image: url(img/flower.png);
+}
+.obstacle.planet2 {
+  width: 10vw;
+  height: 10vw;
+  background-image: url(img/planet2.png);
+}
+.obstacle.planet {
+  width: 10vw;
+  height: 10vw;
+  background-image: url(img/planet.png);
+}
+.obstacle.ufo {
+  width: 14vw;
+  height: 14vw;
+  background-image: url(img/ufo.png);
+}
+.obstacle.heart {
+  width: 9vw;
+  height: 9vw;
+  background-image: url(img/heart.png);
+}
+.obstacle.serang {
+  width: 11vw;
+  height: 11vw;
+  background-image: url(img/serang.png);
+}
+.score {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 3vw;
+  color: white;
+  font-family: 'Chewy', cursive;
+}
+.highscore {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 3vw;
+  color: white;
+font-family: 'Luckiest Guy', cursive;
+}
+.highlight {
+  color: #ff5555;
+  font-size: 5vw;
+}
+
+button { 
+  font-size: 6vw;
+  color: white;
+  position: absolute;
+  font-family: 'Luckiest Guy', cursive;
+  box-shadow: 0px 10px 14px -7px #276873;
+  background-color:#599bb3;
+  border-radius:8px;
+  cursor:pointer;
+  text-shadow:0px 1px 0px #3d768a;
+}
+button.start {
+  top: 50%;
+  left: 60%;
+}
+button.replay {
+  top: 50%;
+  left: 60%;
+}
+</style>
+<body>
+  <div class="intro">
+    <span class="title">Baby Bird!♥</span>
+    <button type="button" class="start">START</button>
+  </div>
+  <div class="bird down"></div>
+  <div class="gameover">
+    <span class="title">GAME OVER</span>
+    <button type="button" class="replay">replay</button>
+  </div>
+  <div class="score">0</div>
+  <div class="highscore">0</div>
+</body>
+</html>
