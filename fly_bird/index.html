@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+	<title>Fly Bird</title>
+	<style>
+	#player {
+		display: none;
+	}
+	</style>
+	<script>
+    window.addEventListener('load', function() {
+    	var fps = 40;
+    	var lastUpdateAt = Date.now();
+
+    	var canvas = document.querySelector('#game');
+    	var ctx = canvas.getContext('2d');
+    	var playerImage = document.querySelector('#player');
+
+    	var x = 0.5; // 플레이어 좌표
+    	var y = 0.2;
+    	var playerWidth = 128; 
+    	var playerHeight = 128;
+    	var initSpeed = -0.04; //뛰는 높이
+    	var yGravity = 0.0025;
+    	var xGravity = 0;
+    	var ySpeed = initSpeed;
+    	var xSpeed = 0;
+    	var left = false;
+    	var right = false;
+
+    	window.addEventListener('keydown', function(e) {
+    		if(e.keyCode === 37) {
+    			left = true;
+    		}
+    		else if(e.keyCode === 39) {
+    			right = true;
+    		}
+    	});
+    	window.addEventListener('keyup', function(e) {
+    		if(e.keyCode === 37) {
+    			left = false;
+    		}
+    		else if(e.keyCode === 39) {
+    			right = false;
+    		}
+    	});
+
+    	function update() {
+    		// 초당 프레임수 제한
+    		requestAnimationFrame(update);
+    		var now = Date.now();
+    		if(now - lastUpdateAt < (1000 / fps)) return;
+    		lastUpdateAt = now;
+
+    		// 좌표 갱신
+    		var w = ctx.canvas.width;
+    		var h = ctx.canvas.height;
+    		if(left) {
+    			xGravity = -0.001;
+    		} else if(right) {
+    			xGravity = 0.001;
+    		} else {
+    			xGravity = xGravity * 0.95;
+    			xSpeed = xSpeed * 0.7;
+    		}
+    		if(xSpeed > 0.01) xSpeed = 0.01;
+    		if(xSpeed < -0.01) xSpeed = -0.01;
+
+    		x = x + xSpeed;
+    		xSpeed = xSpeed + xGravity;
+
+    		if(x < -0.01) {
+    			x = 1.01;
+    		} else if(x > 1.01) {
+    			x = -0.01;
+    		}
+
+	    	y = y + ySpeed;
+	    	ySpeed = ySpeed + yGravity; // 뛰는 속도가 더 빨라짐
+	    	if(y > 1.0) {
+	    		ySpeed = initSpeed;
+	    		y = 1.0;
+	    	} // h보다 y가 크면(즉, 바닥에 닿으면) 다시 초기속도로 점프
+
+    		// 그리기
+	    	ctx.fillStyle = 'rgba(0, 255, 255, 0.8)';
+	    	ctx.fillRect(0, 0, w, h); //사각형 채우기
+
+	    	ctx.fillStyle = '#FF00FF';
+	    	ctx.drawImage(playerImage, (x * w) - (playerWidth / 2), (y * h) - playerHeight); //이미지가 그려지는 좌표값
+    	}
+
+    	update();
+    });
+	</script>
+</head>
+<body>
+	<canvas id="game" width="1200" height="800"></canvas>
+	<img id="player" alt="player" src="player_s.png">
+</body>	
+</html>
