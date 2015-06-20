@@ -1,239 +1,189 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Gravity</title>
-<link href="http://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css">
-<style>
-body {
-font-family: 'Josefin Sans', sans-serif;
-max-width: 1700px;
-margin:0 auto;
-text-align: center;
-background-color: black;
-padding: 40px 30px 30px 30px;
-background-image: url(https://googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/우주.png);
-background-position: bottom;
-background-repeat: no-repeat;
+ <html>
+ <head>
+ <meta charset="utf-8">
+ <title>Gravity</title>
+ <link href="http://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css">
+ <style>
+ body {
+ font-family: 'Josefin Sans', sans-serif;
+ max-width: 1700px;
+ margin:0 auto;
+ text-align: center;
+ background-color: black;
+ padding: 40px 30px 30px 30px;
+ background-image: url(https://googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/우주.png);
+ background-position: bottom;
+ background-repeat: no-repeat;
+ }
+ @media (max-width: 300px) {
+ html { font-size: 70%; }
+ ul span {display:block;
+ margin: 5% 0 5% 0;}
+ }
+ h1, h2, .btext, .role, .name, .namesize {
+  text-transform: uppercase;
+ }
+ .ryan, .matt, .name, .quotes, .storyline, .btext, .review {
+ font-size: 120%;
+ }
+ div.woman, div.man {
+  width: 200px;
+ }
+ div.woman {float: left;
+ text-align: left;
+ }
+ div.man {float: right;
+ text-align: right;
+ }
+ .sandra, .george {
+  width: 80%;
 }
-.contents {color: gray;}
-div.woman {float: left;
-color: #ffffff;
-width: 200px;
-text-align: left;
+ .tagline, .namesize {
+ letter-spacing: 0.2em;
+ }
+ h1 {
+ font-size: 6vw;
+ letter-spacing: 0.7em;
+ }
+ a {text-decoration: none;}
+ .astronaut {
+ margin: 25% 0 10% 0;
+ }
+.quotes, .staff {
+   list-style-type: none;
+   padding-left: 0;
 }
-div.man {float: right;
-color: #ffffff;
-width: 200px;
-text-align: right;
+.staff > li {
+   list-style-type: none;
+   display: inline-block;
 }
-.sandra {
-width: 80%;} 
-.george {
-width: 80%;}
-.letgo {color: #ffffff;
-letter-spacing: 0.2em;  
-text-transform: uppercase;
-}
-@media (max-width: 300px) {
-html { font-size: 70%; }
-.title { font-size: 200%;}
-ul span {display:block;
-margin: 5% 0 5% 0;}
-}
-}
-h2 {margin: 100px 0 100px 0;}
-h1 {
-letter-spacing: 0.7em;
-font-size: 6vw;
-color: white;
-text-transform: uppercase;
-}
-.btext {color: #ffffff;
-font-size: 0.8em;
-text-transform: uppercase;}
-a {text-decoration: none;
-color: gray;}
-.date {color: #ffffff;
-font-size: 200%;
-}
-.astronaut {
-margin: 25% 9% 10% 9%;
-}
-.storyline { color: gray;
-padding-bottom: 50px;
-font-size: 120%;
-margin:0 auto;
-width: 50%
-}
-.valuation {
-color: gray;
-}
-.pg {float: left;
-width: 8%;
-}
-.pg_reverse {
-display: none;}
-.distributor {float: right;}
-.site {float: left;
-font-size: 70%;
-margin: 0;
-}
-.role {font-size: 90%;
-letter-spacing: -0.01em;
-text-transform: uppercase;}
-.name {font-size: 120%;
-letter-spacing: -0.01em;
-text-transform: uppercase;}
-h3 { display: none;}
-li {display: inline-block;}
-.namesize {font-size: 200%;
-letter-spacing: 0.2em;
-text-transform: uppercase;}
-ul {padding-left: 0;}
-.real3d {
-width: 9%;
-}
-.real3d_reverse {
-              display: none;}
-.imax {width: 9%;}
-.imax_reverse {display: none;}
-.distributor {width: 15%;}
-.distributor_reverse {display: none;}
-.quotes {
-color: gray;
-margin-bottom: 60px;
-font-size: 120%;
-}
-.ryan {
-font-size: 120%;
-}
-.matt {
-font-size: 120%;
-}
- @media print{
-  body {padding: 10px 0 0 0;
-    margin: 5px;
-  }
-  .pg_reverse {float: left;
-              width: 10%;
-              display: inline-block;}
-  .pg {display: none;}
-
-.real3d_reverse {width: 11%;
-              display: inline-block;}
-  .real3d {display: none;}
-  .imax {display: none;}
-.imax_reverse {width: 11%;
-               display: inline-block;}
-.distributor {display: none;}
-.distributor_reverse {width: 16%;
-                      display: inline-block;
-                      float: right;} 
-.contents, div.woman, div.man, .letgo, a, .storyline, .valuation, h1, .date, .btext { color: #000000;}
-h1 {font-size: 6em;
-    color: #000000;
-    margin: 2.5% 0 5% 4%;}
-  .astronaut {
-margin: 14% 0 5% 0;
-}
+ .date, .namesize {
+ font-size: 200%;
+ }
  .storyline {
-padding-bottom: 18px;
-font-size: 110%;
-margin:0 auto;
-width: 90%;
+ margin:0 auto;
+ width: 50%
+ }
+ .site {float: left;
+ margin: 0;
+ }
+ .role {font-size: 90%;
 }
-.valuation {
-  padding-top: 13px;
-font-weight: bold;}
-.namesize {font-size: 180%;}
-.ryan, .matt {font-size: 100%;}
-.quotes {margin-bottom: 18px;
-font-size: 98%;
+.quotes {
+  margin: 3%;
 }
-.director {font-size: 150%;
-padding-top: 45px;}
-.role {font-size: 45%;}                 
-.name {font-size: 85%;}
-.astronautimg {width: 16%;}
-.site {font-size: 100%;
-padding-top: 15px;}
-.btext {font-size: 100%;}
-.date {font-size: 250%;}
-}//*미디어쿼리프린트끝*//
-</style>
-</head>
-<body>
-<div class="woman">
-<span class="namesize">Sandra</span> <span class="namesize">Bullock</span>
-<img class="sandra" alt="sandra" src="https://googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/Gravity-film-Sandra-Bullock.jpg">
-<p class="ryan">Ryan Stone is a medical engineer in Space. She is on her first shuttle mission.</p>
-</div>
-<div class="man">
-<span class="namesize">George</span> <span class="namesize">Clooney</span>
-<img class="george" alt="george" src="https://googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/george-clooney-gravity.jpg">
-<p class="matt">Matt Kowalski loves vodka, reminisces on past stories and a relates them to the situation, and likes country music.</p>
-</div>
-<div class="astronaut"><img class="astronautimg" alt="astronautpic" src="https://googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/우주인사이즈수정.png"></div>
-<div class="sentence">
-<h2 class="letgo">Don't let go</h2>
-</div>
-<div class="quotes">
-<p>Ryan Stone: Five. Four. Three. No more just driving. Let's go home.</p>
-<p>Ryan Stone: I hate space!</p>
-<p>Matt Kowalski: Half of North America just lost their Facebook.</p>
-<p>Matt Kowalski: You've got to learn to let go.</p>
-</div>
-<p class="valuation">"A Bracing Masterpiece"</p>
-<div class="storyline">
-<p>Dr. Ryan Stone (Sandra Bullock) is a brilliant medical engineer on her first shuttle mission, with veteran astronaut Matt Kowalsky (George Clooney) in command of his last flight before retiring. But on a seemingly routine spacewalk, disaster strikes. The shuttle is destroyed, leaving Stone and Kowalsky completely alone - tethered to nothing but each other and spiraling out into the blackness.
-</div>
-<div class="contents">
-<div class="director">
-<span class="role">From director</span><span class="name"> Alfonso Cuarón</span>
-</div>
-<h1 class="title">Gravity</h1>
-<div class="name">Warner Bros. Pictures <span class="role">Presents</span></div>
-<h3>스텝</h3>
-<ul>
-<li><span class="role">An</span><span class="name"> Esperanto filmo/Heyday Films</span></li>
-<li><span class="role"> Production An</span><span class="name"> Alfonso Cuarn Film</span></li>
-<li><span class="name"> Sandra Bullock George Clooney "Gravity"</span></li>
-<li><span class="role"> Music by</span><span class="name"> Steven Price</span></li>
-<li><span class="role">Costume designer</span><span class="name"> Jany Temime</span></li>
-<li><span class="role"> Visual effects supervisor</span><span class="name"> Tim Webber</span></li>
-<li><span class="role"> Editors</span><span class="name"> Alfonso Cuarón Mark Sanger</span></li>
-<li><span class="role">Production designer</span><span class="name"> Andy Nicholson</span></li>
-<li><span class="role">Director of photography</span><span class="name"> Emmanuel Lubezki, A.S.C., A.M.C.</span></li>
-<li><span class="role">Executive producer</span><span class="name"> Chris DeFaria Nikki Penny Stenphen Jones</span></li>
-<li><span class="role"> Written by</span><span class="name"> Alfonso Cuarón &amp; Jonas Cuarón</span></li>
-<li><span class="role"> Produced by</span><span class="name"> Alfonso Cuarón David Heyman</span></li>
-<li><span class="role"> Directed by</span><span class="name"> Alfonso Cuarón</span></li>
+.pg {
+  float: left;
+}
+ .distributor {float: right;}
+ .real3d, .imax, .pg {width: 9%;}
+ .distributor {width: 15%;}
+ .print {
+  display: none;
+ }
+@media screen {
+  body, h1 {color: white;}
+  .storyline, .valuation, .quotes, .contents, a, .review {color: gray;}
+}
+@media print {
+     h1 {
+      font-size: 280%;
+     }
+     * {
+      color: black;
+      font-size: 90%;
+          }
+      .screen {
+        display: none;
+      }
+      .print {
+        display: inline-block;
+      }
+      .pg_white {
+        width: 11%;
+        float: left;
+      }  
+      .real3d_white, .imax_white {
+       width: 10%;
+    }
+       .distributor_white {
+        width: 18%;
+        float: right;
+      }
+      .george, .sandra {
+       width: 60%;
+          }
+     .astronautimg {
+      width: 15%;
+     }
+     .storyline {
+      width: 90%;
+     }
+    }
+ </style>
+ </head>
+ <body>
+ <div class="woman">
+ <span class="namesize">Sandra</span> <span class="namesize">Bullock</span>
+ <img class="sandra" alt="sandra" src="https://googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/Gravity-film-Sandra-Bullock.jpg">
+ <p class="ryan">Ryan Stone is a medical engineer in Space. She is on her first shuttle mission.</p>
+ </div>
+ <div class="man">
+ <span class="namesize">George</span> <span class="namesize">Clooney</span>
+ <img class="george" alt="george" src="https://googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/george-clooney-gravity.jpg">
+ <p class="matt">Matt Kowalski loves vodka, reminisces on past stories and a relates them to the situation, and likes country music.</p>
+ </div>
+ <div class="astronaut"><img class="astronautimg" alt="astronautpic" src="https://googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/우주인사이즈수정.png"></div>
+ <div class="sentence">
+ <h2 class="tagline">Don't let go</h2>
+ </div>
+  <ul class="quotes">
+ <li>Ryan Stone: Five. Four. Three. No more just driving. Let's go home.</li>
+ <li>Ryan Stone: I hate space!</li>
+ <li>Matt Kowalski: Half of North America just lost their Facebook.</li>
+ <li>Matt Kowalski: You've got to learn to let go.</li>
 </ul>
-</div>
-<footer>
-<img class="pg" alt="PG-13" src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B4%80%EB%9E%8C%EB%93%B1%EA%B8%89.PNG">
-<!--반전이미지-->
-<img class="pg_reverse" alt="PG-13_reverse" src="https://lh6.googleusercontent.com/-_O8zEMjQtyQ/VGS-vm9JjLI/AAAAAAAAANM/re4xmJssQqg/w426-h237/%EA%B4%80%EB%9E%8C%EB%93%B1%EA%B8%89%2Bcopy.png">
-<!--반전이미지-->
-<span class="site"><a href="http://gravitymovie.warnerbros.com/">gravity-movie.com</a></span>
-<span class="btext">See it in</span>
-<!--반전이미지-->
-<img class="real3d" alt="realD3D" src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/real%203d.PNG">
-<!--반전이미지-->
-<img class="real3d_reverse" alt="realD3D_reverse" src="https://lh6.googleusercontent.com/-eCjE9NNVtsg/VGTAwsmuXEI/AAAAAAAAAOE/8KTvsa0Vo8E/w90-h30-no/real%2B3d%2Bcopy.png">
-<!--반전이미지-->
-<span class="btext">and</span>
-<!--반전이미지-->
-<img class="imax" alt="IMAX3D" src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/3d%20max.PNG">
-<!--반전이미지-->
-<img class="imax_reverse" alt="IMAX3D_reverse" src="https://lh6.googleusercontent.com/-ogK9PK2sFkM/VGTAw6MDo2I/AAAAAAAAAOI/UfBZLIkSJBc/w109-h17-no/3d%2Bmax%2Bcopy.png">
-<!--반전이미지-->
-<img class="distributor" alt="WB" src="https://googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/배급사.PNG">
-<!--반전이미지-->
-<img class="distributor_reverse" alt="WB_reverse" src="https://lh6.googleusercontent.com/-MeptttaMLz0/VGTAw0g9GKI/AAAAAAAAAOM/nV1DhxUADKI/w223-h35-no/%EB%B0%B0%EA%B8%89%EC%82%AC%2Bcopy.png">
-<!--반전이미지-->
-<p class="date">10.4.13</p>
-</footer>
-</body>
-</html>
+ <p class="review">"A Bracing Masterpiece"</p>
+ <div class="storyline">
+ <p>Dr. Ryan Stone (Sandra Bullock) is a brilliant medical engineer on her first shuttle mission, with veteran astronaut Matt Kowalsky (George Clooney) in command of his last flight before retiring. But on a seemingly routine spacewalk, disaster strikes. The shuttle is destroyed, leaving Stone and Kowalsky completely alone - tethered to nothing but each other and spiraling out into the blackness.</p>
+ </div>
+ <div class="contents">
+ <div class="director">
+ <span class="role">From director</span><span class="name"> Alfonso Cuarón</span>
+ </div>
+ <h1 class="title">Gravity</h1>
+ <div class="name">Warner Bros. Pictures <span class="role">Presents</span></div>
+ <ul class="staff">
+ <li><span class="role">An</span><span class="name"> Esperanto filmo/Heyday Films</span></li>
+ <li><span class="role"> Production An</span><span class="name"> Alfonso Cuarn Film</span></li>
+ <li><span class="name"> Sandra Bullock George Clooney "Gravity"</span></li>
+ <li><span class="role"> Music by</span></li>
+ <li><span class="name"> Steven Price</span></li>
+ <li><span class="role">Costume designer</span><span class="name"> Jany Temime</span></li>
+ <li><span class="role"> Visual effects supervisor</span><span class="name"> Tim Webber</span></li>
+ <li><span class="role"> Editors</span><span class="name"> Alfonso Cuarón Mark Sanger</span></li>
+ <li><span class="role">Production designer</span><span class="name"> Andy Nicholson</span></li>
+ <li><span class="role">Director of photography</span><span class="name"> Emmanuel Lubezki, A.S.C., A.M.C.</span></li>
+ <li><span class="role">Executive producer</span><span class="name"> Chris DeFaria Nikki Penny Stenphen Jones</span></li>
+ <li><span class="role"> Written by</span><span class="name"> Alfonso Cuarón &amp; Jonas Cuarón</span></li>
+ <li><span class="role"> Produced by</span><span class="name"> Alfonso Cuarón David Heyman</span></li>
+ <li><span class="role"> Directed by</span><span class="name"> Alfonso Cuarón</span></li>
+ </ul>
+ </div>
+ <footer>
+ <img class="pg screen" alt="PG-13" src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/%EA%B4%80%EB%9E%8C%EB%93%B1%EA%B8%89.PNG">
+ <img class="pg_white print" alt="PG-13" src="https://eaea182fdbbf9a15dfb2b511ecae57712df221f5.googledrive.com/host/0B8OzB6gB2Mvpamp4ZFNZVzh6MFk/%EA%B4%80%EB%9E%8C%EB%93%B1%EA%B8%89.PNG">
+ <span class="site"><a href="http://gravitymovie.warnerbros.com/">gravity-movie.com</a></span>
+ <span class="btext">See it in</span>
+ <img class="real3d screen" alt="realD3D" src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/real%203d.PNG">
+ <img class="real3d_white print" alt="realD3D" src="https://eaea182fdbbf9a15dfb2b511ecae57712df221f5.googledrive.com/host/0B8OzB6gB2Mvpamp4ZFNZVzh6MFk/real%203d.PNG">
+ <span class="btext">and</span>
+ <img class="imax screen" alt="IMAX3D" src="https://ea2aec4ecf2d24041c65437bd88abd01d17b98e7.googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/3d%20max.PNG">
+ <img class="imax_white print" alt="IMAX3D" src="https://eaea182fdbbf9a15dfb2b511ecae57712df221f5.googledrive.com/host/0B8OzB6gB2Mvpamp4ZFNZVzh6MFk/3d%20max.PNG">
+ <img class="distributor screen" alt="WB" src="https://googledrive.com/host/0B_D-g3G7HJjDX29SVlpET21paUk/배급사.PNG">
+ <img class="distributor_white print" alt="WB" src="https://eaea182fdbbf9a15dfb2b511ecae57712df221f5.googledrive.com/host/0B8OzB6gB2Mvpamp4ZFNZVzh6MFk/%EB%B0%B0%EA%B8%89%EC%82%AC.PNG">
+ <p class="date">10.4.13</p>
+ </footer>
+ </body>
+ </html>

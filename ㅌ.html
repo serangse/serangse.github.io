@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Modification</title>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script>
+	var svg;
+	var groups;
+
+	function main() {
+		document.querySelector('svg').addEventListener('click', update);
+		update();
+	}
+
+	function update() {
+		var data = [];
+		for(var i = 0; i < 160; i++) {
+			data.push(createModification());
+		}
+
+		svg = d3.select('svg');
+		groups = svg.selectAll('g').data(data);
+		groups.enter()
+			.append('g')
+			.attr('transform', function(d, i) {return 'translate(' + (((i % 10) + 1) * 80) + ' ' + Math.floor(i / 10) * 40 + ')';})
+			.each(createEach);
+		groups
+			.each(updateEach);
+	}
+	function createModification() {
+		var ncoors = Math.floor(Math.random() * 20) + 2;
+		var coors = [];
+		for(var j = 0; j < ncoors; j++) {
+			var y = 0;
+			if(Math.random() > 0.5) {
+				y = (Math.random() - 0.5) * 30;
+			}
+			coors.push({x: 0, y: y});
+		}
+		return {
+			coors: coors,
+			weight: Math.random() * 2.5 + 0.5,
+			linecap: Math.random() > 0.5 ? 'round' : 'square',
+			interpolate: Math.random() > 0.5 ? 'linear' : 'basis'
+		};
+	}
+
+	function createEach(data) {
+		var g = d3.select(this);
+		var pathData = [{x: 0, y: 20}, {x: 40, y: 20}];
+		var path = d3.svg.line()
+			.x(function(d) {return d.x;})
+			.y(function(d) {return d.y;})
+			.interpolate(data.interpolate);
+
+		g.append('circle')
+			.attr('cx', 0)
+			.attr('cy', 20)
+			.attr('r', 4)
+			.attr('class', 'circle1');
+		g.append('circle')
+			.attr('cx', 40)
+			.attr('cy', 20)
+			.attr('r', 4)
+			.attr('class', 'circle2');
+		g.append('path')
+			.attr('d', path(pathData))
+			.attr('stroke-linecap', data.linecap)
+			.attr('stroke', 'black')
+			.attr('fill', 'none')
+			.attr('stroke-width', data.weight);
+	}
+	function updateEach(data) {
+		var g = d3.select(this);
+		var pathData = [];
+		for(var i = 0; i < data.coors.length; i++) {
+			var coor = data.coors[i];
+			pathData.push({
+				x: (i / (data.coors.length - 1)) * 40 + coor.x,
+				y: 20 + coor.y
+			});
+		}
+		var path = d3.svg.line()
+			.x(function(d) {return d.x;})
+			.y(function(d) {return d.y;})
+			.interpolate(data.interpolate);
+		g.select('path')
+			.attr('d', path(pathData))
+			.attr('stroke-linecap', data.linecap)
+			.attr('stroke', 'black')
+			.attr('fill', 'none')
+			.attr('stroke-width', data.weight);
+		}
+
+	window.addEventListener('load', main);
+	</script>
+	<style>
+	html, body {
+		margin: 0;
+		height: 100%;
+	}
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+	</style>
+	</head>
+
+	<body>
+		<svg></svg>
+	</body>
+</html>

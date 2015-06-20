@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <script>
+    var c1;
+    var ctx;
+    var bg;
+    var i = 0;
+
+    window.addEventListener('load', function() {
+        c1 = document.getElementById('c1');
+        ctx = c1.getContext('2d');
+        bg = document.createElement('img');
+        bg.src = 'img2.jpg';
+
+        window.requestAnimationFrame(update);
+    });
+
+    var update = function() {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        var m = Math.min(w, h);
+
+        ctx.canvas.width  = w;
+        ctx.canvas.height = h;
+
+        ctx.clearRect(0, 0, w, h);
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.drawImage(bg, (w - 698) * 0.5, 0);
+        ctx.globalCompositeOperation = 'difference';
+        ctx.fillStyle = 'rgb(0,255,242)';
+        orbit(ctx, w / 2, h / 2, i, m / 2, 5);
+        ctx.fillStyle = 'rgb(0,255,121)';
+        orbit(ctx, w / 2, h / 2, i + (Math.PI * (2/3)), m / 2, 5);
+        ctx.fillStyle = 'rgb(187, 255, 0)';
+        orbit(ctx, w / 2, h / 2, i + (Math.PI * (4/3)), m / 2, 5);
+        
+        i = i + 0.02;
+        window.requestAnimationFrame(update);
+    }
+    
+    var rect = function(ctx, x, y, size) {
+        ctx.beginPath();
+        ctx.arc(x, y, size / 2, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+    
+    var orbit = function(ctx, x, y, p, size, sats) {
+        if(sats === 0) return;
+        
+        // 스스로를 그리기
+        var myx = x + Math.cos(p) * size * 0.5;
+        var myy = y + Math.sin(p) * size * 0.4;
+        rect(ctx, x, y, size);
+
+        // 위성 그리기
+        
+    }
+    </script>
+    <style>
+    html, body, canvas {
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+    </style>
+</head>
+<body>
+
+<canvas id="c1"></canvas>
+
+</body>
+</html>
