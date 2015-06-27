@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="1200" height="800"></canvas>
+    <script>
+    var fps = 30;
+    var angle = 0.0;
+    var lastUpdateAt = 0;
+    var ctx;
+
+    function main() {
+    	// 한 번만 실행할 코드들은 여기에...
+    	var canvas = document.querySelector('#myCanvas');
+    	ctx = canvas.getContext('2d');
+
+    	update();
+    }
+
+    function update() {
+    	window.requestAnimationFrame(update);
+
+		var now = Date.now();
+		if(now - lastUpdateAt < (1000 / fps)) return;
+		lastUpdateAt = now;
+
+		// 반복적으로 실행할 코드들은 여기에...
+		ctx.clearRect(0, 0, 1200, 800);
+		ctx.fillStyle = 'rgba(190, 230, 255, 1)';
+		var x1 = Math.cos(angle + 0.0 * Math.PI) * 50 + 100;
+		var y1 = Math.sin(angle + 0.0 * Math.PI) * 50 + 100;
+		var x2 = Math.cos(angle + 0.4 * Math.PI) * 50 + 100;
+		var y2 = Math.sin(angle + 0.4 * Math.PI) * 50 + 100;
+		var x3 = Math.cos(angle + 0.8 * Math.PI) * 50 + 100;
+		var y3 = Math.sin(angle + 0.8 * Math.PI) * 50 + 100;
+		var x4 = Math.cos(angle + 1.2 * Math.PI) * 50 + 100;
+		var y4 = Math.sin(angle + 1.2 * Math.PI) * 50 + 100;
+		var x5 = Math.cos(angle + 1.6 * Math.PI) * 50 + 100;
+		var y5 = Math.sin(angle + 1.6 * Math.PI) * 50 + 100;
+		ctx.fillRect(x1 - 5, y1 - 5, 10, 10);
+		ctx.fillRect(x2 - 5, y2 - 5, 10, 10);
+		ctx.fillRect(x3 - 5, y3 - 5, 10, 10);
+		ctx.fillRect(x4 - 5, y4 - 5, 10, 10);
+		ctx.fillRect(x5 - 5, y5 - 5, 10, 10);
+		
+		ctx.beginPath();
+		ctx.moveTo(x1, y1);
+		ctx.lineTo(x3, y3);
+		ctx.strokeStyle = 'rgba(190, 230, 255, 1)';
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(x2, y2);
+		ctx.lineTo(x4, y4);
+		ctx.strokeStyle = 'rgba(190, 230, 255, 1))';
+		ctx.stroke();
+
+        ctx.beginPath();
+		ctx.moveTo(x3, y3);
+		ctx.lineTo(x5, y5);
+		ctx.strokeStyle = 'rgba(190, 230, 255, 1)';
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(x2, y2);
+		ctx.lineTo(x5, y5);
+		ctx.strokeStyle = 'rgba(190, 230, 255, 1)';
+		ctx.stroke();
+        
+        ctx.beginPath();
+		ctx.moveTo(x1, y1);
+		ctx.lineTo(x4, y4);
+		ctx.strokeStyle = 'rgba(190, 230, 255, 1)';
+		ctx.stroke();
+  
+
+		
+	 angle = angle + 0.05;
+    }
+
+    
+
+    window.addEventListener('load', main);
+    </script>
+  </body>
+</html>   

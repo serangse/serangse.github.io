@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="578" height="200"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      context.fillStyle = 'black';
+      for(var i = 0; i < 2 * Math.PI; i = i + 0.1) {
+        context.fillRect(Math.cos(i) * 30 + 200, Math.sin(i) * 30 + 100, 2, 2);
+      }
+    </script>
+  </body>
+</html>   

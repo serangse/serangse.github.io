@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <title>돈방석</title>
+    <title>꽃</title>
     <style>
     #flower, #block {
         display: none;
@@ -15,19 +15,18 @@
     <script>
 
     window.addEventListener('load', function() {
-        var fps = 40;
+        var fps = 30;
         var lastUpdateAt = Date.now();
 
         var canvas = document.querySelector('#game');
         var ctx = canvas.getContext('2d');
         var flowerImage = document.querySelector('#flower');
-
         var flowerWidth = 50; 
         var flowerHeight = 50;
-        var x = 0.3; // 플레이어 좌표
+        var x = 0.5; // 플레이어 좌표
         var y = 1.0;
-        var xspeed = 0.05;
-        var yspeed = -0.05;
+        var xspeed = 0.02;
+        var yspeed = -0.02;
 
         var w = ctx.canvas.width;
         var h = ctx.canvas.height;
@@ -37,7 +36,7 @@
             requestAnimationFrame(update);
             
             var now = Date.now();
-            if(now - lastUpdateAt < (3000 / fps)) return;
+            if(now - lastUpdateAt < (2000/ fps)) return;
             lastUpdateAt = now;
             ctx.fillStyle = 'rgba(190, 230, 255, 0)';
             ctx.fillRect(0, 0, w, h);
@@ -47,7 +46,6 @@
             ctx.drawImage(flowerImage, (x * w) - (flowerWidth / 2), (y * h) - flowerHeight); //이미지가 그려지는 좌표값
             if(x >= 1) {
                 xspeed = xspeed * -1;
-                flowerHeight = flowerHeight + 5
             }
             if(x <= 0) {
 
@@ -64,24 +62,13 @@
         }
 
 
-
-        //만약 플레이어의 x좌표가 1.0 이상이면 xspeed가 -0.01이 되야함
-        //만약 플레이어의 x좌표가 0.1 이하면 xspeed가 +0.01이 되야함
-        // for (var count2 = 0; count2 < 0; count2++) {
-        // for (var count = 0; count < 4; count++) {
-        // moveForward(100);
-        // turnRight(90);
-        // }
-        // turnRight(0);
-        // }
-
         update();
     });
     </script>
 </head>
 <body>
     <canvas id="game" width="1200" height="800"></canvas>
-    <img id="flower" alt="flower" src="Gold_coin_icon.png">
-    <h1>★부자가되길소취★</h1>
+    <img id="flower" alt="flower" src="round.png">
+    <img id="flower" alt="flower" src="round.png">
 </body> 
 </html>

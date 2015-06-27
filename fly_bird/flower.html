@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <title>돈방석</title>
+    <title>꽃</title>
     <style>
     #flower, #block {
         display: none;
@@ -15,7 +15,7 @@
     <script>
 
     window.addEventListener('load', function() {
-        var fps = 40;
+        var fps = 30;
         var lastUpdateAt = Date.now();
 
         var canvas = document.querySelector('#game');
@@ -24,9 +24,9 @@
 
         var flowerWidth = 50; 
         var flowerHeight = 50;
-        var x = 0.3; // 플레이어 좌표
+        var x = 0.5; // 플레이어 좌표
         var y = 1.0;
-        var xspeed = 0.05;
+        var xspeed = 0.07;
         var yspeed = -0.05;
 
         var w = ctx.canvas.width;
@@ -37,9 +37,9 @@
             requestAnimationFrame(update);
             
             var now = Date.now();
-            if(now - lastUpdateAt < (3000 / fps)) return;
+            if(now - lastUpdateAt < (2000/ fps)) return;
             lastUpdateAt = now;
-            ctx.fillStyle = 'rgba(190, 230, 255, 0)';
+            ctx.fillStyle = 'rgba(190, 230, 255, 1)';
             ctx.fillRect(0, 0, w, h);
             x = x + xspeed;
             y = y + yspeed;
@@ -47,7 +47,6 @@
             ctx.drawImage(flowerImage, (x * w) - (flowerWidth / 2), (y * h) - flowerHeight); //이미지가 그려지는 좌표값
             if(x >= 1) {
                 xspeed = xspeed * -1;
-                flowerHeight = flowerHeight + 5
             }
             if(x <= 0) {
 
@@ -81,7 +80,6 @@
 </head>
 <body>
     <canvas id="game" width="1200" height="800"></canvas>
-    <img id="flower" alt="flower" src="Gold_coin_icon.png">
-    <h1>★부자가되길소취★</h1>
+    <img id="flower" alt="flower" src="round.png">
 </body> 
 </html>

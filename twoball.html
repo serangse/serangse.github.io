@@ -1,0 +1,123 @@
+<html>
+<head>
+    <title>동그라미두개</title>
+    <meta charset="utf-8">
+    <style>
+    body {
+  display: block;
+  margin: 0;
+}
+	</style>
+    <script type="text/javascript">
+
+	var boxx = 0;
+	var boxy = 0;
+	var boxwidth = 1200;
+	var boxheight = 800;
+	var ballrad = 15;
+	var ballrad1 = 50;
+	var boxboundx = boxwidth+boxx-ballrad;
+	var boxboundy = boxheight+boxy-ballrad;
+	var inboxboundx = boxx+ballrad;
+	var inboxboundy = boxy+ballrad;
+	var boxboundx1 = boxwidth+boxx-ballrad1;
+	var boxboundy1 = boxheight+boxy-ballrad1;
+	var inboxboundx1 = boxx+ballrad1;
+	var inboxboundy1 = boxy+ballrad1;
+	var ballx = 10;
+	var bally = 60;
+	var ballx1 = 70;
+	var bally1 = 50;
+	var ctx;
+	var ballvx = 30;
+	var ballvy = 25;
+	var ballvx1 = 40;
+	var ballvy1 = 20;
+	
+function init(){  
+  ctx = document.getElementById('canvas').getContext('2d');
+  ctx.fillStyle = "rgb(0, 230, 255)";
+  ctx.fillRect(10, 10, 120, 120);
+  ctx.fill();
+  moveball();  
+  setInterval(moveball,30);  
+}  
+function moveball(){  
+  ctx.fillStyle = "rgb(193, 236, 235)";
+  ctx.fillRect(boxx,boxy,boxwidth,boxheight);
+  moveandcheck();
+  moveandcheck1();
+  
+
+} 
+function moveandcheck() {
+	var nballx = ballx + ballvx;
+	var nbally = bally +ballvy;
+
+  if (nballx > boxboundx) {
+	 ballvx =-ballvx;
+	 nballx = boxboundx;
+  }
+  if (nballx < inboxboundx) {
+     nballx = inboxboundx
+	 ballvx = -ballvx;
+  }
+  if (nbally > boxboundy) {
+	 nbally = boxboundy;
+	 ballvy =-ballvy;
+  }
+  if (nbally < inboxboundy) {
+    nbally = inboxboundy;
+	 ballvy = -ballvy;
+  }
+  ballx = nballx;
+  bally = nbally;
+  ctx.beginPath();
+  ctx.fillStyle = "rgb(225, 157, 212)";
+  ctx.arc(ballx, bally, ballrad,0,Math.PI*2,true);
+  ctx.fill();
+
+	//
+}
+  function moveandcheck1()
+{
+  var nballx1 = ballx1 + ballvx1;
+  var nbally1 = bally1 +ballvy1;
+  ctx.beginPath();
+  ctx.fillStyle = "rgb(10, 111, 212)";
+   if (nballx1 > boxboundx1) {
+	 ballvx1 =-ballvx1;
+	 nballx1 = boxboundx1;
+  ctx.fillStyle = "rgb(23, 157, 212)";
+  }
+  if (nballx1 < inboxboundx1) {
+     nballx1 = inboxboundx1;
+	 ballvx1 = -ballvx1;
+  ctx.fillStyle = "rgb(225, 100, 212)";
+  }
+  if (nbally1 > boxboundy1) {
+	 nbally1 = boxboundy1;
+	 ballvy1 =-ballvy1;
+  ctx.fillStyle = "rgb(23,130, 12)";
+  }
+  if (nbally1 < inboxboundy1) {
+   nbally1 = inboxboundy1;
+	 ballvy1 = -ballvy1;
+  ctx.fillStyle = "rgb(100, 30, 212)";
+  }
+  ballx1 = nballx1;
+  bally1 = nbally1;
+  ctx.fillRect(ballx1, bally1, 10, 10);
+
+//  ctx.arc(ballx1, bally1, ballrad1,0,Math.PI*2,true);
+   ctx.fill();
+}
+</script>
+</head>
+<body onLoad="init();">  
+<canvas id="canvas" width="1200" height="800">
+</canvas>  
+
+</body>
+</html>
+
