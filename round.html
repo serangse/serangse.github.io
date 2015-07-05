@@ -11,16 +11,33 @@
   <body>
     <canvas id="myCanvas" width="1200" height="800"></canvas>
     <script>
-    var fps = 30;
-    var angle = 0.0;
+    var fps = 40;
     var lastUpdateAt = 0;
     var ctx;
+    var width;
+    var height;
+
+    var stars = [];
+    for(var i = 0; i < 50; i++) {
+    	stars.push({
+    		size: Math.random() * 50 + 10,
+    		x: Math.random() * 200 + 50,
+    		y: Math.random() * 200 + 50,
+    		angle: 0,
+    		directionx: 1,
+    		directiony: 1,
+    		speed: Math.random() * 5 + 1,
+    		angularSpeed: Math.random() * 0.3,
+    		color: 'rgba(255, ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', 1)'
+    	});
+    }
 
     function main() {
     	// 한 번만 실행할 코드들은 여기에...
     	var canvas = document.querySelector('#myCanvas');
     	ctx = canvas.getContext('2d');
-
+    	width = canvas.width;
+    	height = canvas.height;
     	update();
     }
 
@@ -32,60 +49,52 @@
 		lastUpdateAt = now;
 
 		// 반복적으로 실행할 코드들은 여기에...
-		ctx.clearRect(0, 0, 1200, 800);
-		ctx.fillStyle = 'rgba(190, 230, 255, 1)';
-		var x1 = Math.cos(angle + 0.0 * Math.PI) * 50 + 100;
-		var y1 = Math.sin(angle + 0.0 * Math.PI) * 50 + 100;
-		var x2 = Math.cos(angle + 0.4 * Math.PI) * 50 + 100;
-		var y2 = Math.sin(angle + 0.4 * Math.PI) * 50 + 100;
-		var x3 = Math.cos(angle + 0.8 * Math.PI) * 50 + 100;
-		var y3 = Math.sin(angle + 0.8 * Math.PI) * 50 + 100;
-		var x4 = Math.cos(angle + 1.2 * Math.PI) * 50 + 100;
-		var y4 = Math.sin(angle + 1.2 * Math.PI) * 50 + 100;
-		var x5 = Math.cos(angle + 1.6 * Math.PI) * 50 + 100;
-		var y5 = Math.sin(angle + 1.6 * Math.PI) * 50 + 100;
-		ctx.fillRect(x1 - 5, y1 - 5, 10, 10);
-		ctx.fillRect(x2 - 5, y2 - 5, 10, 10);
-		ctx.fillRect(x3 - 5, y3 - 5, 10, 10);
-		ctx.fillRect(x4 - 5, y4 - 5, 10, 10);
-		ctx.fillRect(x5 - 5, y5 - 5, 10, 10);
-		
-		ctx.beginPath();
-		ctx.moveTo(x1, y1);
-		ctx.lineTo(x3, y3);
-		ctx.strokeStyle = 'rgba(190, 230, 255, 1)';
-		ctx.stroke();
+		ctx.clearRect(0, 0, width, height);
 
-		ctx.beginPath();
-		ctx.moveTo(x2, y2);
-		ctx.lineTo(x4, y4);
-		ctx.strokeStyle = 'rgba(190, 230, 255, 1))';
-		ctx.stroke();
+		for(var a = 0; a < stars.length; a++) {
+			var star = stars[a];
+			ctx.strokeStyle = star.color;
+			ctx.fillStyle = star.color;
 
-        ctx.beginPath();
-		ctx.moveTo(x3, y3);
-		ctx.lineTo(x5, y5);
-		ctx.strokeStyle = 'rgba(190, 230, 255, 1)';
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.moveTo(x2, y2);
-		ctx.lineTo(x5, y5);
-		ctx.strokeStyle = 'rgba(190, 230, 255, 1)';
-		ctx.stroke();
-        
-        ctx.beginPath();
-		ctx.moveTo(x1, y1);
-		ctx.lineTo(x4, y4);
-		ctx.strokeStyle = 'rgba(190, 230, 255, 1)';
-		ctx.stroke();
-  
-
-		
-	 angle = angle + 0.05;
-    }
-
-    
+			var xs = [];
+			var ys = [];
+			// 점 찍기
+			for(var i = 0; i < 5; i++) {
+				xs[i] = Math.cos(star.angle + i * 0.4 * Math.PI) * star.size + 100 + star.x;
+				ys[i] = Math.sin(star.angle + i * 0.4 * Math.PI) * star.size + 100 + star.y;
+				ctx.fillRect(xs[i] - 5, ys[i] - 5, 10, 10);
+			}
+	        for(var i = 0; i < 5; i++) {
+				xs[i] = Math.cos(star.angle + i * 0.4 * Math.PI) * star.size + 100 + star.x;
+				ys[i] = Math.sin(star.angle + i * 0.4 * Math.PI) * star.size + 100 + star.y;
+				ctx.fillRect(xs[i] - 5, ys[i] - 5, 10, 10);
+			}
+			// 선 연결
+			for(var i = 0; i < 5; i++) {
+				ctx.beginPath();
+				ctx.moveTo(xs[i], ys[i]);
+				ctx.lineTo(xs[(i + 2) % 5], ys[(i + 2) % 5]);
+				ctx.stroke();
+			}
+			// 충돌 검사
+			for(var i = 0; i < 5; i++) {
+				if(0 > xs[i] || xs[i] > width) {
+					star.directionx = star.directionx * -1;
+					break;
+				}
+			}
+			for(var i = 0; i < 5; i++) {
+				if(0 > ys[i] || ys[i] > height) {
+					star.directiony = star.directiony * -1;
+					break;
+				}
+			}
+			// 이동 및 회전
+			star.x = star.x + star.speed * star.directionx;
+			star.y = star.y + star.speed * star.directiony;
+			star.angle = star.angle + star.angularSpeed;
+		}
+	}
 
     window.addEventListener('load', main);
     </script>

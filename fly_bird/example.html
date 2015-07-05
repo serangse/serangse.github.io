@@ -30,12 +30,13 @@
         var h = ctx.canvas.height;
            
     	function update() {
-    		// 초당 프레임수 제한
     		requestAnimationFrame(update);
             
+            // 초당 프레임수 제한
     		var now = Date.now();
     		if(now - lastUpdateAt < (1000 / fps)) return;
     		lastUpdateAt = now;
+
             ctx.fillStyle = 'rgba(190, 230, 255, 1)';
             //ctx.fillRect(0, 0, w, h); //사각형 채우기
             x = x + xspeed;
