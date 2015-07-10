@@ -1,16 +1,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <style>
-      body {
-        margin: 0px;
-        padding: 0px;
-      }
-    </style>
-  </head>
-  <body>
-    <canvas id="myCanvas" width="1200" height="800"></canvas>
-    <script>
+  <script>
     var fps = 40;
     var lastUpdateAt = 0;
     var ctx;
@@ -18,26 +9,32 @@
     var height;
 
     var stars = [];
-    for(var i = 0; i < 50; i++) {
-    	stars.push({
-    		size: Math.random() * 50 + 10,
-    		x: Math.random() * 200 + 50,
-    		y: Math.random() * 200 + 50,
-    		angle: 0,
-    		directionx: 1,
-    		directiony: 1,
-    		speed: Math.random() * 5 + 1,
-    		angularSpeed: Math.random() * 0.3,
-    		color: 'rgba(255, ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 256) + ', 1)'
-    	});
-    }
 
     function main() {
     	// 한 번만 실행할 코드들은 여기에...
     	var canvas = document.querySelector('#myCanvas');
+    	canvas.width = window.innerWidth;
+    	canvas.height = window.innerHeight;
     	ctx = canvas.getContext('2d');
     	width = canvas.width;
     	height = canvas.height;
+
+	    for(var i = 0; i < 60; i++) {
+	    	var star = {
+	    		size: Math.random() * 50 + 10,
+	    		rotation: 0,
+	    		angle: Math.random() * 2 * Math.PI,
+	    		directionx: 1,
+	    		directiony: 1,
+	    		speed: Math.random() * 5,
+	    		angularSpeed: Math.random() * 0.3,
+	    		color: 'rgba(255, ' + Math.floor(Math.random() * 256) + ', ' + Math.floor(Math.random() * 150) + ', 1)'
+	    	};
+	    	star.x = (width - star.size) * 0.5;
+	    	star.y = (height - star.size) * 0.5;
+	    	stars.push(star);
+	    }
+
     	update();
     }
 
@@ -49,8 +46,14 @@
 		lastUpdateAt = now;
 
 		// 반복적으로 실행할 코드들은 여기에...
+		
 		ctx.clearRect(0, 0, width, height);
-
+		var grd = ctx.createLinearGradient(0, 0, width, 0);
+		grd.addColorStop(0, 'rgb(155, 235, 227)');
+		grd.addColorStop(1, 'rgb(240, 240, 102)');
+		ctx.fillStyle = grd;
+		ctx.fillRect(0, 0, width, height);
+    
 		for(var a = 0; a < stars.length; a++) {
 			var star = stars[a];
 			ctx.strokeStyle = star.color;
@@ -60,13 +63,13 @@
 			var ys = [];
 			// 점 찍기
 			for(var i = 0; i < 5; i++) {
-				xs[i] = Math.cos(star.angle + i * 0.4 * Math.PI) * star.size + 100 + star.x;
-				ys[i] = Math.sin(star.angle + i * 0.4 * Math.PI) * star.size + 100 + star.y;
+				xs[i] = Math.cos(star.rotation + i * 0.4 * Math.PI) * star.size + 100 + star.x;
+				ys[i] = Math.sin(star.rotation + i * 0.4 * Math.PI) * star.size + 100 + star.y;
 				ctx.fillRect(xs[i] - 5, ys[i] - 5, 10, 10);
 			}
 	        for(var i = 0; i < 5; i++) {
-				xs[i] = Math.cos(star.angle + i * 0.4 * Math.PI) * star.size + 100 + star.x;
-				ys[i] = Math.sin(star.angle + i * 0.4 * Math.PI) * star.size + 100 + star.y;
+				xs[i] = Math.cos(star.rotation + i * 0.4 * Math.PI) * star.size + 100 + star.x;
+				ys[i] = Math.sin(star.rotation + i * 0.4 * Math.PI) * star.size + 100 + star.y;
 				ctx.fillRect(xs[i] - 5, ys[i] - 5, 10, 10);
 			}
 			// 선 연결
@@ -92,11 +95,24 @@
 			// 이동 및 회전
 			star.x = star.x + star.speed * star.directionx;
 			star.y = star.y + star.speed * star.directiony;
-			star.angle = star.angle + star.angularSpeed;
+			star.rotation = star.rotation + star.angularSpeed;
 		}
+
 	}
 
     window.addEventListener('load', main);
     </script>
-  </body>
+  <style>
+  html, body {
+  	height: 100%;
+  	overflow: hidden;
+  	margin: 0;
+  }
+  canvas { 
+  }
+  </style>
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    </body>
 </html>   
