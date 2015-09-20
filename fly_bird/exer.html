@@ -39,7 +39,6 @@
             var now = Date.now();
             if(now - lastUpdateAt < (3000 / fps)) return;
             lastUpdateAt = now;
-            ctx.fillStyle = 'rgba(190, 230, 255, 0)';
             ctx.fillRect(0, 0, w, h);
             x = x + xspeed;
             y = y + yspeed;

@@ -13,6 +13,8 @@
     function main() {
     	// 한 번만 실행할 코드들은 여기에...
     	var canvas = document.querySelector('#myCanvas');
+    	canvas.addEventListener('click', onClick);
+
     	canvas.width = window.innerWidth;
     	canvas.height = window.innerHeight;
     	ctx = canvas.getContext('2d');
@@ -100,6 +102,9 @@
 
 	}
 
+	function onClick() {
+		console.log(1);
+	}
     window.addEventListener('load', main);
     </script>
   <style>
