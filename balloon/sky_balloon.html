@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+ 	.balloon {
+ 		position: absolute;
+ 	}
+ 	html, body {
+ 		height: 100%;
+ 		margin: 0;
+ 	}
+    </style>
+    <script>
+    function main() {
+    }
+
+    function move(e) {
+		var balloon = document.querySelector('.balloon');
+		balloon.style.left = e.x + 'px';
+		balloon.style.top = e.y + 'px';
+		
+    }
+
+    window.addEventListener('load', main);    
+    window.addEventListener('mousemove', move);
+
+    </script>
+  </head>
+  <body>
+<img src="balloon.svg" alt="balloon" class="balloon">
+ </body>
+</html>
