@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>final</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  <script src="libraries/p5.js" type="text/javascript"></script>
+
+  <script src="libraries/p5.dom.js" type="text/javascript"></script>
+  <script src="libraries/p5.sound.js" type="text/javascript"></script>
+
+  <script src="sketch.js" type="text/javascript"></script>
+
+  <style>
+  
+   #container{
+      position: relative;
+        margin : 0 auto;
+        background-color:#ffffff;
+        width:960px;
+        /*border-style : solid;
+        border-width : 3px;
+        border-color : #ff9999;*/
+        
+      }
+      #header{
+        background-color: #ffffff;
+        height: 100px;
+        width:960px;
+        
+      }
+      #sketch-holder{
+        float:left;
+        background-color:0;
+        width :660px;
+        height : 400px;
+        padding : 5px 0 0 50px;
+        margin : 0;
+        
+      }
+      #sidebar{
+        float: left;
+        background-color:0;
+        width:160px;
+        height: 550px;
+        
+      }
+      
+      #changeButton {
+        position: absolute;
+        right: 10px;
+        top: 120px;
+        width:100px;
+        height: 150px;
+        
+      }
+      #footer{
+        clear: both;
+        background-color:0;
+        margin : 0;
+        padding : 80px 0 30px 0;
+        width : 960px;
+        height : 10px;
+        font-size: 60%;
+        text-align : center;
+      }
+      
+      #lang {
+        float: right;
+        cursor: pointer;
+      }
+      
+      body.ko .en {
+        display: none;
+      }
+      body.en .ko {
+        display: none;
+      }
+      
+    div {
+      margin: auto;
+      width: 800px;
+    }
+    
+    body {
+      padding: 0;
+      margin: 0 auto;
+      font-family: '나눔고딕',NanumGothic,'맑은 고딕',Malgun Gothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',sans-serif;;
+    }
+    
+    h1 {
+      margin: 0;
+      padding: 15px 15px 15px 15px;
+      border-bottom: 1px solid gray;
+    }
+    
+    
+    
+    a {
+      color: black;
+      text-decoration: none;
+      padding: 0px 15px 0px 0px;
+      font-size: 80%;
+    }
+    
+    
+    ul {
+      float: left;
+      list-style: none;
+      font-weight: light;
+      margin: 0px 0px 0px 30px;
+      padding: 0;
+    }
+    
+    li {
+      margin: 0;
+      padding: 0px 0px 5px 0px;
+      /*border-bottom: 1px solid gray;
+    */
+    }
+    
+    a:hover {
+      color: #a5a5a5;
+    }
+
+    #lang:hover {
+      color: #a5a5a5;
+    }
+    
+    .changeButton:hover {
+     
+    }
+    
+    .refresh {
+      display: block;
+      width: 120px;
+      height: 120px;
+      background: url('data/change.svg') no-repeat;
+    }
+    .refresh:hover {
+      background: url('data/change_2.svg') no-repeat;
+    }
+    
+    canvas {
+      
+      float: left;
+    }
+  </style>
+</head>
+
+<body class="ko">
+  <div id="container">
+    <div id = "header">
+    <p><span id="lang"><span class="ko">English</span><span class="en">한국어</span></span></p>
+    <h1><img src="data/title.svg" alt="title"></h1>
+    
+    </div>
+    <div id = "sidebar">
+    <ul class="regions">
+      <li class="RN"><a href="#중구"><span class="ko">중구</span><span class="en">Jung-gu</span></a></li>
+      <li class="RN"><a href="#종로"><span class="ko">종로구</span><span class="en">Jongro-gu</span></a></li>
+      <li class="RN"><a href="#용산"><span class="ko">용산</span><span class="en">Yongsan</span></a></li>
+      <li class="RN"><a href="#성동"><span class="ko">성동구</span><span class="en">Seongdong-gu</span></a></li>
+      <li class="RN"><a href="#광진"><span class="ko">광진구</span><span class="en">Gwangjin-gu</span></a></li>
+      <li class="RN"><a href="#동대문"><span class="ko">동대문구</span><span class="en">Dongdaemun-gu</span></a></li>
+      <li class="RN"><a href="#중랑"><span class="ko">중랑구</span><span class="en">Jungnang-gu</span></a></li>
+      <li class="RN"><a href="#성북"><span class="ko">성북구</span><span class="en">Seongbuk-gu</span></a></li>
+      <li class="RN"><a href="#강북"><span class="ko">강북구</span><span class="en">Gangbuk-gu</span></a></li>
+      <li class="RN"><a href="#도봉"><span class="ko">도봉구</span><span class="en">Dobong-gu</span></a></li>
+      <li class="RN"><a href="#노원"><span class="ko">노원구</span><span class="en">Nowon-gu</span></a></li>
+      <li class="RN"><a href="#은평"><span class="ko">은평구</span><span class="en">Eunpyeong-gu</span></a></li>
+      <li class="RN"><a href="#서대문"><span class="ko">서대문구</span><span class="en">Seodaemun-gu</span></a></li>
+      <li class="RN"><a href="#마포"><span class="ko">마포구</span><span class="en">Mapo-gu</span></a></li>
+      <li class="RN"><a href="#양천"><span class="ko">양천구</span><span class="en">Yangcheon-gu</span></a></li>
+      <li class="RN"><a href="#강서"><span class="ko">강서구</span><span class="en">Gangseo-gu</span></a></li>
+      <li class="RN"><a href="#구로"><span class="ko">구로구</span><span class="en">Guro-gu</span></a></li>
+      <li class="RN"><a href="#금천"><span class="ko">금천구</span><span class="en">Geumcheon-gu</span></a></li>
+      <li class="RN"><a href="#영등포"><span class="ko">영등포구</span><span class="en">Yeongdeungpo-gu</span></a></li>
+      <li class="RN"><a href="#동작"><span class="ko">동작구</span><span class="en">Dongjak-gu</span></a></li>
+      <li class="RN"><a href="#관악"><span class="ko">관악구</span><span class="en">Gwanak-gu</span></a></li>
+      <li class="RN"><a href="#서초"><span class="ko">서초구</span><span class="en">Seocho-gu</span></a></li>
+      <li class="RN"><a href="#강남"><span class="ko">강남구</span><span class="en">Gangnam-gu</span></a></li>
+      <li class="RN"><a href="#송파"><span class="ko">송파구</span><span class="en">Songpa-gu</span></a></li>
+    </ul>
+    
+    </div>
+    
+    
+  
+  <div id="sketch-holder">
+  </div>
+  <div id = "changeButton">
+    <a href="#" class="refresh"></a>
+    <script>
+      var locaName = '';
+      document.querySelector('.refresh').addEventListener('click', function(e) {
+        render();
+      });
+      
+      document.querySelector('#lang').addEventListener('click', function(e) {
+        if(document.body.getAttribute('class') === 'en') {
+          document.body.setAttribute('class', 'ko');
+        } else {
+          document.body.setAttribute('class', 'en');
+        }
+      });
+
+      var regions = document.querySelectorAll('.regions li a');
+      for (var i = 0; i < regions.length; i++) {
+        regions[i].addEventListener('click', function(e) {
+          var region = e.srcElement.parentNode.href.split('#')[1];
+          locaName = e.srcElement.innerHTML;
+          updateWeather(region);
+        })
+      }
+    </script>
+    </div>
+  <div id = "footer">
+  <p>Copyright 2016 Kim Serang. All Rights Reserved.</p>
+  </div>
+  </div>
+</body>
+
+</html>

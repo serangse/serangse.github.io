@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" width="600px" height="600px" viewBox="0 0 600 600" enable-background="new 0 0 600 600" xml:space="preserve">
+<g id="레이어_2_1_" display="none">
+	<rect x="196.5" y="45" display="inline" fill="none" stroke="#000000" stroke-miterlimit="10" width="229" height="229"/>
+	<rect x="196.5" y="284.241" display="inline" fill="none" stroke="#000000" stroke-miterlimit="10" width="229" height="272.759"/>
+	<rect x="440.5" y="45" display="inline" fill="none" stroke="#000000" stroke-miterlimit="10" width="127" height="127"/>
+	<rect x="440.5" y="188.833" display="inline" fill="none" stroke="#000000" stroke-miterlimit="10" width="127" height="127"/>
+	<rect x="440.5" y="333.5" display="inline" fill="none" stroke="#000000" stroke-miterlimit="10" width="127" height="223.5"/>
+</g>
+<g id="레이어_1_1_">
+	<g>
+		<g opacity="0.1">
+			<path d="M512.691,383.703v-32.52c0-6.713,5.439-12.153,12.151-12.153c6.713,0,12.154,5.44,12.154,12.153h5.529
+				c0-9.767-7.916-17.685-17.686-17.685c-9.766,0-17.684,7.918-17.684,17.685v30.979l-10.755,16.899l-12.721-20.476l-12.72,14.271
+				l-13.03-4.965l51.499,171.25l51.499-171.25l-13.028,4.965l-12.721-14.271l-12.72,20.476L512.691,383.703z"/>
+		</g>
+		<g>
+			<path fill="#CAB1DD" d="M508.691,387.703v-32.52c0-6.713,5.439-12.153,12.151-12.153c6.713,0,12.154,5.44,12.154,12.153h5.529
+				c0-9.767-7.916-17.684-17.686-17.684c-9.766,0-17.684,7.917-17.684,17.684v30.979l-10.755,16.899l-12.721-20.476l-12.72,14.271
+				l-13.03-4.965l51.499,171.25l51.499-171.25l-13.028,4.965l-12.721-14.271l-12.72,20.476L508.691,387.703z"/>
+		</g>
+	</g>
+	<path fill="#545454" d="M538.527,355.184c0-9.768-7.916-17.684-17.686-17.684c-9.766,0-17.684,7.916-17.684,17.684v36.711h5.529
+		v-36.711c0-6.713,5.44-12.153,12.152-12.153c6.713,0,12.154,5.44,12.154,12.153H538.527z"/>
+	<polygon fill="#FFCE00" points="466.965,396.858 453.935,391.895 505.434,563.145 	"/>
+	<polygon fill="#F2EEC0" points="492.403,403.062 479.685,382.588 466.965,396.858 505.434,563.145 	"/>
+	<polygon fill="#FFCE00" points="543.902,396.858 556.933,391.895 505.434,563.145 	"/>
+	<polygon fill="#F2EEC0" points="518.464,403.062 531.184,382.588 543.902,396.858 505.434,563.145 	"/>
+	<polygon fill="#FFCE00" points="518.464,403.062 505.434,382.588 492.403,403.062 505.434,563.145 	"/>
+</g>
+</svg>
