@@ -118,7 +118,7 @@ if ( 5 < rain){
 
   if(27 <= temp) {
     //text("오늘은", 50, 50);
-    
+    image(summerbg, 0, 0);
     index = Math.floor(Math.random() * 3);
     item = sleevelesses[index];
     
@@ -136,7 +136,7 @@ if ( 5 < rain){
     
   } else if(23 <= temp && temp <= 26) {
     //text("반팔, 반바지", 50, 50);
-    
+    image(summerbg, 0, 0);
     index = Math.floor(Math.random() * 3);
     item = short_sleeves[index];
     
@@ -154,7 +154,7 @@ if ( 5 < rain){
     
   } else if (20 <= temp && temp <= 22) {
     //text("긴팔, 7부바지", 50, 50);
-      
+    image(springbg, 0, 0);
     index = Math.floor(Math.random() * 3);
     item = long_sleeves[index];
     
@@ -172,6 +172,7 @@ if ( 5 < rain){
     
       
   } else if(17 <= temp && temp <= 19) {
+    image(springbg, 0, 0);
     //text("니트, 슬랙스", 50, 50);
     index = Math.floor(Math.random() * 3);
     item = sweaters[index];
@@ -199,7 +200,7 @@ if ( 5 < rain){
     }
   } else if(12 <= temp && temp <= 16) {
     //text("자켓, 긴바지", 50, 50);
-   
+    image(fallbg, 0, 0);
     index = Math.floor(Math.random() * 3);
     item = jackets[index];
     
@@ -227,7 +228,7 @@ if ( 5 < rain){
     }
   } else if(10 <= temp && temp <= 11) {
       //text("트렌치코트, 긴바지", 50, 50);
-    
+    image(winterbg, 0, 0);
     index = Math.floor(Math.random() * 3);
     item = coats[index];
     
@@ -252,7 +253,7 @@ if ( 5 < rain){
     }
   } else if(6 <= temp && temp <= 9) {
       //text("겨울코트, 긴바지", 50, 50);
-     
+    image(winterbg, 0, 0); 
     index = Math.floor(Math.random() * 3);
     item = winter_coats[index];
     
