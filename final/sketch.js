@@ -107,7 +107,7 @@ if ( 5 < rain){
   
   
   
-  if (7 < insolation){
+  if (6 < insolation){
     //text("선글라스", 50, 250);
     index = Math.floor(Math.random() * 2);
     item = sunglasses[index];
@@ -116,7 +116,7 @@ if ( 5 < rain){
     
   }
 
-  if(27 <= temp) {
+  if(25 <= temp) {
     //text("오늘은", 50, 50);
     image(summerbg, 0, 0);
     index = Math.floor(Math.random() * 3);
@@ -134,7 +134,7 @@ if ( 5 < rain){
     
     image(item, 0, 0);
     
-  } else if(23 <= temp && temp <= 26) {
+  } else if(20 <= temp && temp <= 24) {
     //text("반팔, 반바지", 50, 50);
     image(summerbg, 0, 0);
     index = Math.floor(Math.random() * 3);
@@ -152,7 +152,7 @@ if ( 5 < rain){
     
     image(item, 0, 0);
     
-  } else if (20 <= temp && temp <= 22) {
+  } else if (17 <= temp && temp <= 19) {
     //text("긴팔, 7부바지", 50, 50);
     image(springbg, 0, 0);
     index = Math.floor(Math.random() * 3);
@@ -171,7 +171,7 @@ if ( 5 < rain){
     image(item, 0, 0);
     
       
-  } else if(17 <= temp && temp <= 19) {
+  } else if(14 <= temp && temp <= 16) {
     image(springbg, 0, 0);
     //text("니트, 슬랙스", 50, 50);
     index = Math.floor(Math.random() * 3);
@@ -198,7 +198,7 @@ if ( 5 < rain){
     
         image(item, 0, 0);
     }
-  } else if(12 <= temp && temp <= 16) {
+  } else if(10 <= temp && temp <= 13) {
     //text("자켓, 긴바지", 50, 50);
     image(fallbg, 0, 0);
     index = Math.floor(Math.random() * 3);
@@ -226,7 +226,7 @@ if ( 5 < rain){
     
         image(item, 0, 0);
     }
-  } else if(10 <= temp && temp <= 11) {
+  } else if(5 <= temp && temp <= 9) {
       //text("트렌치코트, 긴바지", 50, 50);
     image(winterbg, 0, 0);
     index = Math.floor(Math.random() * 3);
@@ -251,7 +251,7 @@ if ( 5 < rain){
     
         image(item, 0, 0);
     }
-  } else if(6 <= temp && temp <= 9) {
+  } else if(0 <= temp && temp <= 4) {
       //text("겨울코트, 긴바지", 50, 50);
     image(winterbg, 0, 0); 
     index = Math.floor(Math.random() * 3);
